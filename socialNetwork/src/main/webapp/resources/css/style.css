@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+/*----- Signup page styles by Rohit Start-----*/
+body{margin:0; padding:0; font-family: Arial;}
+#wrapper{width:100%;}
+.header{background:#1da49d;width:100%;float:left;  height:70px;}
+.footer{width:100%;
+	height:70px;
+	background:#373737;
+	float:left;
+	}
+/*.logoDiv{background:url(../images/HdLogo.jpg) no-repeat 0 0; position: relative; width: 7.4%;  padding: 3% 0;  background-size: 100% 99%; float:left;}*/
+.logoDiv{width:200px; height:50px; position: relative;    top: 10px;left: 60px; background-size: 100% 99%; float:left; background-color:#fff;}
+.signin-btn{width:100px; height:30px; position: relative;    top: 21px;right: 160px;  float:right; background-color:#fff;cursor:pointer; border:1px solid #A0A0A0;} 
+.signin-btn label{ position: relative;    top: 4px;left: 20px; float:left; color:#1da49d; cursor:pointer;}
+
+.create-account{width:450px; height:60px; position: relative;    top: 21px;left: 525px; color:#333;background-color:#fff;  float: left; font-family: calibre;}
+.create-account label{width:420px; height:50px; position: relative;    top: 5px;left: 10px; font-size:30px;}
+
+.left-sec{width:600px; height:600px; position: relative;    top: 110px; left: -330px;; background-color:#fff;  float: left;}
+.text-dum{color:#333;width:515px; height:60px; position: relative;    top: 21px;left: 5px;  float: left;}
+.text-dum label{color:#1da49d; float:left;}
+.we-can{color:#333;width:255px; height:60px; position: relative;    top: 50px;left: 5px;  float: left; font-size:45px;font-weight: bold; color:#0fb494; line-height: 37px;}
+.we-can p{width:50px;height:10px; color:#ec5051;font-size:45px; float:left; font-weight: bold; }
+.we-can label{}
+.join{  color: #a0a0a0;
+    float: left;
+    height: 100px;
+    position: relative;
+    top: 150px;
+    width: 410px; font-size: 23px;}
+.join label{}
+
+
+.right-sec{width:450px; height:900px; position: relative;    top: -510px; color:#333;background-color:#fff;  float: right;}
+.sign-label{color:#000;font-size:22px;}
+.form{width: 420px; display: inline-block;  margin-left: -80px;}
+.form ul{list-style: outside none none;}
+.form ul li{margin:10px 0; display: inline-block;}
+.form ul li input{height:35px;}
+.form ul li span{float:left;}
+.form ul li label{ float:right; margin-left: 10px;}
+.single-row{width:350px; height:35px;  }
+.text-dec{text-decoration:underline; cursor:pointer; color:#0fb494;}
+
+
+
+
+
+
+
+/*----- Signup page styles by Rohit End-----*/

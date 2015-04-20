@@ -8,6 +8,7 @@ public class UserProfile extends BaseTransferObject{
 	String firstName;
 	String lastName;
 	String password;
+	String rePassword;
 	char gender;
 	Date dateOfBirth;
 	String email;
@@ -256,27 +257,38 @@ public class UserProfile extends BaseTransferObject{
 	public void setSecurityAnswer_5(String securityAnswer_5) {
 		this.securityAnswer_5 = securityAnswer_5;
 	}
-	@Override
-	public String toString() {
-		return "UserProfile [firstName=" + firstName + ", lastName=" + lastName
-				+ ", password=" + password + ", gender=" + gender
-				+ ", dateOfBirth=" + dateOfBirth + ", email=" + email
-				+ ", phoneNumber=" + phoneNumber + ", desciption=" + desciption
-				+ ", facebookID=" + facebookID + ", tweeeterID=" + tweeeterID
-				+ ", googleID=" + googleID + ", educationID=" + educationID
-				+ ", occupationID=" + occupationID + ", securityQuestionId_1="
-				+ securityQuestionId_1 + ", securityQuestionId_2="
-				+ securityQuestionId_2 + ", securityQuestionId_3="
-				+ securityQuestionId_3 + ", securityQuestionId_4="
-				+ securityQuestionId_4 + ", securityQuestionId_5="
-				+ securityQuestionId_5 + ", securityAnswer_1="
-				+ securityAnswer_1 + ", securityAnswer_2=" + securityAnswer_2
-				+ ", securityAnswer_3=" + securityAnswer_3
-				+ ", securityAnswer_4=" + securityAnswer_4
-				+ ", securityAnswer_5=" + securityAnswer_5
-				+ ", securityQuestions=" + securityQuestions
-				+ ", securityAnwers=" + securityAnwers + "]";
+	
+	
+	public String getRePassword()
+	{
+		return rePassword;
 	}
+	public void setRePassword(String rePassword)
+	{
+		this.rePassword = rePassword;
+	}
+	@Override
+	public String toString()
+	{
+		return "UserProfile [firstName=" + firstName + ", lastName=" + lastName
+			+ ", password=" + password + ", rePassword=" + rePassword
+			+ ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
+			+ ", email=" + email + ", phoneNumber=" + phoneNumber
+			+ ", desciption=" + desciption + ", facebookID=" + facebookID
+			+ ", tweeeterID=" + tweeeterID + ", googleID=" + googleID
+			+ ", educationID=" + educationID + ", occupationID=" + occupationID
+			+ ", securityQuestionId_1=" + securityQuestionId_1
+			+ ", securityQuestionId_2=" + securityQuestionId_2
+			+ ", securityQuestionId_3=" + securityQuestionId_3
+			+ ", securityQuestionId_4=" + securityQuestionId_4
+			+ ", securityQuestionId_5=" + securityQuestionId_5
+			+ ", securityAnswer_1=" + securityAnswer_1 + ", securityAnswer_2="
+			+ securityAnswer_2 + ", securityAnswer_3=" + securityAnswer_3
+			+ ", securityAnswer_4=" + securityAnswer_4 + ", securityAnswer_5="
+			+ securityAnswer_5 + ", securityQuestions=" + securityQuestions
+			+ ", securityAnwers=" + securityAnwers + "]";
+	}
+	 
 	
 	 
 	 

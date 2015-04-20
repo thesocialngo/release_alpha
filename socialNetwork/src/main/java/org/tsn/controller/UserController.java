@@ -29,7 +29,19 @@ import org.tsn.tos.UserProfile;
 	    	UserProfile profile = new UserProfile();
 	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
 	        
-	        return  "profile/updateprofile";
+	        //return  "profile/updateprofile";
+	    	return  "profile/SignUp";
+	    }
+	    
+	    @RequestMapping(value = "/test", method = RequestMethod.GET)
+	    public String testUserProfile(ModelMap map)
+	    {
+	    	//map.addAttribute("question", "");
+	    	UserProfile profile = new UserProfile();
+	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
+	        
+	        //return  "profile/updateprofile";
+	    	return  "profile/bkpSignUp";
 	    }
 	    
 	    @RequestMapping(value = "/edit", method = RequestMethod.POST)
