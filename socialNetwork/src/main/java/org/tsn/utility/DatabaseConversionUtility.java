@@ -1,5 +1,8 @@
 package org.tsn.utility;
 
+import org.tsn.entity.TEducation;
+import org.tsn.entity.TLogin;
+import org.tsn.entity.TOccupation;
 import org.tsn.entity.TProfile;
 import org.tsn.tos.UserProfile;
 
@@ -13,24 +16,28 @@ public class DatabaseConversionUtility extends BaseUtility {
 		if(null == userProfile)
 			return null;
 		
+		TLogin login = new TLogin();
+		login.setUserName(userProfile.getEmail());
+		login.setPassword( userProfile.getPassword());
 		TProfile profileEntity = new TProfile();
 		
-		/*profileEntity.setFirstName(firstName);
-		profileEntity.setLastName(lastName);
-		profileEntity.setGender(gender);
-		profileEntity.setDob(dob);
-		profileEntity.setEmailId(emailId);
-		profileEntity.setPhoneNumber(phoneNumber);
-		profileEntity.setProfileDescr(profileDescr);
-		profileEntity.setFacebookId(facebookId);
-		profileEntity.setTweeterId(tweeterId);
-		profileEntity.setGoogleId(googleId);
-		profileEntity.setIsAdmin(isAdmin);
+		profileEntity.setFirstName(userProfile.getFirstName());
+		profileEntity.setLastName(userProfile.getLastName());
+		profileEntity.setGender(userProfile.getGender());
+		profileEntity.setDob(userProfile.getDateOfBirth());
+		profileEntity.setEmailId(userProfile.getEmail());
+		profileEntity.setPhoneNumber( userProfile.getPhoneNumber());
+		//profileEntity.setProfileDescr(userProfile);
+		//profileEntity.setFacebookId();
+		//profileEntity.setTweeterId(tweeterId);
+		//profileEntity.setGoogleId(googleId);
+		//profileEntity.setIsAdmin(isAdmin);
 		
-		profileEntity.setTLogin(TLogin);
-		profileEntity.setTEducation(TEducation);
-		profileEntity.setTOccupation(TOccupation);
-		profileEntity.setTSecurityAnswerses(TSecurityAnswerses);*/
-		return null;
+		
+		profileEntity.setTLogin(login);
+		//profileEntity.setTEducation( new TEducation() );
+		//profileEntity.setTOccupation(new TOccupation());
+		//profileEntity.setTSecurityAnswerses( new TSecurityAnswer);
+		return profileEntity;
 	}
 }
