@@ -16,4 +16,9 @@ public interface TSN_Constants {
 	String[] CAUSES_COLUMNS = {"CAUSE_dESCR"};
 	String[] EDUCATION_COLUMNS = {"EDUCATION_TEXT"};
 	String[] OCCUPATION_COLUMNS = {"OCCUPATION_TEXT"};*/
+	
+	public final static int	DEFAULT_TABLE_ID	= 1;
+	public final static String	DEFAULT_TABLE_TEXT	= "default";
+	
+	public final static double	NOT_APPLICABLE	= Double.parseDouble(String.valueOf(Integer.MIN_VALUE));
 }

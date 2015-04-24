@@ -1,6 +1,6 @@
 package org.tsn.entity;
 
-// Generated Feb 19, 2015 10:13:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,56 +14,72 @@ import org.apache.commons.logging.LogFactory;
  * @author Hibernate Tools
  */
 @Stateless
-public class TProjectMilestonesHome {
+public class TProjectMilestonesHome
+{
 
-	private static final Log log = LogFactory
-			.getLog(TProjectMilestonesHome.class);
+	private static final Log	log	= LogFactory.getLog(TProjectMilestonesHome.class);
 
 	@PersistenceContext
-	private EntityManager entityManager;
+	private EntityManager		entityManager;
 
-	public void persist(TProjectMilestones transientInstance) {
+	public void persist(TProjectMilestones transientInstance)
+	{
 		log.debug("persisting TProjectMilestones instance");
-		try {
+		try
+		{
 			entityManager.persist(transientInstance);
 			log.debug("persist successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("persist failed", re);
 			throw re;
 		}
 	}
 
-	public void remove(TProjectMilestones persistentInstance) {
+	public void remove(TProjectMilestones persistentInstance)
+	{
 		log.debug("removing TProjectMilestones instance");
-		try {
+		try
+		{
 			entityManager.remove(persistentInstance);
 			log.debug("remove successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("remove failed", re);
 			throw re;
 		}
 	}
 
-	public TProjectMilestones merge(TProjectMilestones detachedInstance) {
+	public TProjectMilestones merge(TProjectMilestones detachedInstance)
+	{
 		log.debug("merging TProjectMilestones instance");
-		try {
+		try
+		{
 			TProjectMilestones result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("merge failed", re);
 			throw re;
 		}
 	}
 
-	public TProjectMilestones findById(int id) {
+	public TProjectMilestones findById(int id)
+	{
 		log.debug("getting TProjectMilestones instance with id: " + id);
-		try {
+		try
+		{
 			TProjectMilestones instance = entityManager.find(
 					TProjectMilestones.class, id);
 			log.debug("get successful");
 			return instance;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("get failed", re);
 			throw re;
 		}

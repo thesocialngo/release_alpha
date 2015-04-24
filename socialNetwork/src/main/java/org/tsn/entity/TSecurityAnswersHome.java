@@ -1,6 +1,6 @@
 package org.tsn.entity;
 
-// Generated Feb 19, 2015 10:13:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,56 +14,72 @@ import org.apache.commons.logging.LogFactory;
  * @author Hibernate Tools
  */
 @Stateless
-public class TSecurityAnswersHome {
+public class TSecurityAnswersHome
+{
 
-	private static final Log log = LogFactory
-			.getLog(TSecurityAnswersHome.class);
+	private static final Log	log	= LogFactory.getLog(TSecurityAnswersHome.class);
 
 	@PersistenceContext
-	private EntityManager entityManager;
+	private EntityManager		entityManager;
 
-	public void persist(TSecurityAnswers transientInstance) {
+	public void persist(TSecurityAnswers transientInstance)
+	{
 		log.debug("persisting TSecurityAnswers instance");
-		try {
+		try
+		{
 			entityManager.persist(transientInstance);
 			log.debug("persist successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("persist failed", re);
 			throw re;
 		}
 	}
 
-	public void remove(TSecurityAnswers persistentInstance) {
+	public void remove(TSecurityAnswers persistentInstance)
+	{
 		log.debug("removing TSecurityAnswers instance");
-		try {
+		try
+		{
 			entityManager.remove(persistentInstance);
 			log.debug("remove successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("remove failed", re);
 			throw re;
 		}
 	}
 
-	public TSecurityAnswers merge(TSecurityAnswers detachedInstance) {
+	public TSecurityAnswers merge(TSecurityAnswers detachedInstance)
+	{
 		log.debug("merging TSecurityAnswers instance");
-		try {
+		try
+		{
 			TSecurityAnswers result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("merge failed", re);
 			throw re;
 		}
 	}
 
-	public TSecurityAnswers findById(int id) {
+	public TSecurityAnswers findById(int id)
+	{
 		log.debug("getting TSecurityAnswers instance with id: " + id);
-		try {
+		try
+		{
 			TSecurityAnswers instance = entityManager.find(
 					TSecurityAnswers.class, id);
 			log.debug("get successful");
 			return instance;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("get failed", re);
 			throw re;
 		}

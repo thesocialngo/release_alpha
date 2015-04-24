@@ -39,8 +39,10 @@ public class UserProfileDAOImpl implements IUserProfileDAO{
 
 		try {
 			TProfile profile =   DatabaseConversionUtility.shared.getUserProfile(userProfile);
-			 this.sessionFactory.getCurrentSession().save( 
+			 logger.info("persisting profile :"+profile);
+			this.sessionFactory.getCurrentSession().save( 
 					 profile);
+			
 			 logger.info("persist successful");
 		} catch (RuntimeException re) {
 			logger.error("FAILED TO ADD RECORD", re);

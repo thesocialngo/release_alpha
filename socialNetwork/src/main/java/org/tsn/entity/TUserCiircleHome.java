@@ -1,6 +1,6 @@
 package org.tsn.entity;
 
-// Generated Feb 19, 2015 10:13:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,54 +14,71 @@ import org.apache.commons.logging.LogFactory;
  * @author Hibernate Tools
  */
 @Stateless
-public class TUserCiircleHome {
+public class TUserCiircleHome
+{
 
-	private static final Log log = LogFactory.getLog(TUserCiircleHome.class);
+	private static final Log	log	= LogFactory.getLog(TUserCiircleHome.class);
 
 	@PersistenceContext
-	private EntityManager entityManager;
+	private EntityManager		entityManager;
 
-	public void persist(TUserCiircle transientInstance) {
+	public void persist(TUserCiircle transientInstance)
+	{
 		log.debug("persisting TUserCiircle instance");
-		try {
+		try
+		{
 			entityManager.persist(transientInstance);
 			log.debug("persist successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("persist failed", re);
 			throw re;
 		}
 	}
 
-	public void remove(TUserCiircle persistentInstance) {
+	public void remove(TUserCiircle persistentInstance)
+	{
 		log.debug("removing TUserCiircle instance");
-		try {
+		try
+		{
 			entityManager.remove(persistentInstance);
 			log.debug("remove successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("remove failed", re);
 			throw re;
 		}
 	}
 
-	public TUserCiircle merge(TUserCiircle detachedInstance) {
+	public TUserCiircle merge(TUserCiircle detachedInstance)
+	{
 		log.debug("merging TUserCiircle instance");
-		try {
+		try
+		{
 			TUserCiircle result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("merge failed", re);
 			throw re;
 		}
 	}
 
-	public TUserCiircle findById(int id) {
+	public TUserCiircle findById(int id)
+	{
 		log.debug("getting TUserCiircle instance with id: " + id);
-		try {
+		try
+		{
 			TUserCiircle instance = entityManager.find(TUserCiircle.class, id);
 			log.debug("get successful");
 			return instance;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("get failed", re);
 			throw re;
 		}

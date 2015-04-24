@@ -85,12 +85,16 @@ public class MasterDataConversionUtility {
 		return new TSecurityQuestions(questionText);
 	}
 	public TCategories getCategories(String categoryText) {
-		return new TCategories(categoryText);
+		TCategories result = new TCategories();
+		result.setCategoryDescr(categoryText);;
+		 return result;
 		
 	}
 
 	public TCauses getCauses(String desc) {
-		return new TCauses(desc);
+		TCauses result = new TCauses( );
+		result.setCauseDescr(desc);
+		return result;
 	}
 
 	public TEducation getEducation(String desc) {

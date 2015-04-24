@@ -1,12 +1,10 @@
 package org.tsn.entity;
 
-// Generated Feb 19, 2015 10:13:36 PM by Hibernate Tools 4.0.0
-
+// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -16,54 +14,71 @@ import org.apache.commons.logging.LogFactory;
  * @author Hibernate Tools
  */
 @Stateless
-public class TLoginHome  {
+public class TLoginHome
+{
 
-	private static final Log log = LogFactory.getLog(TLoginHome.class);
+	private static final Log	log	= LogFactory.getLog(TLoginHome.class);
 
 	@PersistenceContext
-	private EntityManager entityManager;
+	private EntityManager		entityManager;
 
-	public void persist(TLogin transientInstance) {
+	public void persist(TLogin transientInstance)
+	{
 		log.debug("persisting TLogin instance");
-		try {
+		try
+		{
 			entityManager.persist(transientInstance);
 			log.debug("persist successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("persist failed", re);
 			throw re;
 		}
 	}
 
-	public void remove(TLogin persistentInstance) {
+	public void remove(TLogin persistentInstance)
+	{
 		log.debug("removing TLogin instance");
-		try {
+		try
+		{
 			entityManager.remove(persistentInstance);
 			log.debug("remove successful");
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("remove failed", re);
 			throw re;
 		}
 	}
 
-	public TLogin merge(TLogin detachedInstance) {
+	public TLogin merge(TLogin detachedInstance)
+	{
 		log.debug("merging TLogin instance");
-		try {
+		try
+		{
 			TLogin result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("merge failed", re);
 			throw re;
 		}
 	}
 
-	public TLogin findById(Integer id) {
+	public TLogin findById(Integer id)
+	{
 		log.debug("getting TLogin instance with id: " + id);
-		try {
+		try
+		{
 			TLogin instance = entityManager.find(TLogin.class, id);
 			log.debug("get successful");
 			return instance;
-		} catch (RuntimeException re) {
+		}
+		catch(RuntimeException re)
+		{
 			log.error("get failed", re);
 			throw re;
 		}
