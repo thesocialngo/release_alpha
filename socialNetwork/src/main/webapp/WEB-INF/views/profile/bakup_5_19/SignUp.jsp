@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>The Social NGO</title>
 <link href="<c:url value="/css/style.css" />" type="text/css"
 	rel="stylesheet" />
 <link href="<c:url value="/css/jquery-ui-themes.css" />" type="text/css"
@@ -67,10 +67,8 @@
 					<li><span><form:input class="single-row"  path="rePassword" placeholder="Retype Password"></form:input> </span></li>
 					<li><span>Already have an account?</span><label class="text-dec">Login</label></li>
 				</ul>
-				<input class="signin-btn" type="submit" value="Sign up" >
-				<div class="signin-btn">
-					<label>Sign up</label>
-				</div>
+				<input class="signin-btn" type="submit"  value="Sign up" >
+			 
 </form:form>
 
 		</div>
