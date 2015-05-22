@@ -30,7 +30,7 @@ import org.tsn.tos.UserProfile;
 	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
 	        
 	        //return  "profile/updateprofile";
-	    	return  "profile/bkpSignUp";
+	    	return  "profile/SignUp";//"profile/bkpSignUp";
 	    }
 	    
 	    @RequestMapping(value = "/test", method = RequestMethod.GET)
@@ -41,7 +41,7 @@ import org.tsn.tos.UserProfile;
 	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
 	        
 	        //return  "profile/updateprofile";
-	    	return  "profile/bkpSignUp";
+	    	return  "profile/SignUp";//"profile/bkpSignUp";
 	    }
 	    
 	    @RequestMapping(value = "/edit", method = RequestMethod.POST)

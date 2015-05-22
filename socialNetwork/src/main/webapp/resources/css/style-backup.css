@@ -1,0 +1,1135 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Raleway:400,100,200,300,500,600,700,800,900);
+
+
+/**********************************
+
+font-family: 'Oswald', sans-serif;
+
+font-family: 'Open Sans', sans-serif;
+
+font-family: 'Raleway', sans-serif;
+
+***********************************/
+
+
+/* Getting the new tags to behave */
+
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video{ display: block; }
+mark, rp, rt, ruby, summary, time{ display: inline }
+
+body { 
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0px auto;
+	
+}
+html, body { height:100%;}
+.wrapper{
+	margin:0px auto;
+	width:800px;
+	height:auto;
+	background:url(../images/background.png) no-repeat center 135px;
+}
+.clear{
+	clear:both;
+}
+.container {
+	margin:0px auto;
+	width:980px;
+	max-height:100%;
+	min-width:200px;
+}
+.cols-1{
+	float:left;
+	width:100%;
+}
+.cols-2{
+	float:left;
+	width:47%;
+	margin-right:6%;
+}
+.cols-2-last{
+	float:right;
+	width:47%;
+}
+.cols-3{
+	float:left;
+	width:30.66%;
+	margin-right:4%;
+}
+.cols-3-last{
+	float:right;
+	width:30.66%;
+}
+.cols-4{
+	float:left;
+	width:22%;
+	margin-right:4%;
+	padding-bottom:20px;
+}
+.cols-4-last{
+	float:right;
+	width:22%;padding-bottom:20px;
+}
+.cols-5{
+	float:left;
+	width:16.8%;
+	margin-right:4%;
+}
+.cols-5-last{
+	float:right;
+	width:16.8%;
+}
+.cols-6{
+	float:left;
+	width:13.33%;
+	margin-right:4%;
+}
+.cols-6-last{
+	float:right;
+	width:13.33%;
+}
+.cols-7{
+	float:left;
+	width:10.85%;
+	margin-right:4%;
+}
+.cols-7-last{
+	float:right;
+	width:10.85%;
+}
+.cols-8{
+	float:left;
+	width:9%;
+	margin-right:4%;
+}
+.cols-8-last{
+	float:right;
+	width:9%;
+}
+.cols-9{
+	float:left;
+	width:8.44%;
+	margin-right:3%;
+}
+.cols-9-last{
+	float:right;
+	width:8.44%;
+}
+.cols-10{
+	float:left;
+	width:7.3%;
+	margin-right:3%;
+}
+.cols-10-last{
+	float:right;
+	width:7.3%;
+}
+.cols-11{
+	float:left;
+	width:6.36%;
+	margin-right:3%;
+}
+.cols-11-last{
+	float:right;
+	width:6.36%;
+}
+.cols-12{
+	float:left;
+	width:5.58%;
+	margin-right:3%;
+}
+.cols-12-last{
+	float:right;
+	width:5.58%;
+}
+
+.lft{
+	float:left;
+	width:40.5%;
+}
+.lft img{
+	width:100%;
+}
+.rgt{
+	float:right;
+	width:53%;
+}
+.algn_rgt{text-align:right;}
+.clear{
+	clear:both;
+}
+.toprow{
+	margin:0px auto;
+	width:100%;
+	background:url(../images/top-bg.png) repeat-x center bottom #e8e8e8;
+	padding:5px 0px;
+}
+.toprow .search{
+	float:right;
+	width:171px;
+	height:36px;
+	background:url(../images/search.png) no-repeat left top;
+}
+.toprow .search .input1{
+	float: left;
+	width: 112px;
+	background: none;
+	border: none;
+	margin-top: 8px;
+	margin-left: 15px;
+}
+.toprow .search .input2{
+	float: right;
+	width: 22px;
+	background: none;
+	border: none;
+	margin-top: 5px;
+	padding: 3px 0px;
+	margin-right: 7px;
+	border-radius: 31px;
+	cursor: pointer;
+}
+.login_link{
+	float:right;
+	width:auto;
+	padding-right:20px;
+	font-family: 'Oswald', sans-serif;
+	font-size:13px;
+	font-weight:300;
+	text-transform:uppercase;
+	color:#032b48;
+	padding-top:4px;
+}
+.login_link a{
+	font-family: 'Oswald', sans-serif;
+	font-size:13px;
+	font-weight:300;
+	text-transform:uppercase;
+	color:#032b48;
+	text-decoration:none;
+	letter-spacing:1px;	
+	margin-left:10px;
+	margin-right:10px;
+}
+.login_link a:hover{
+	color:#000000;
+}
+.header{
+	width:100%;
+	margin:0px auto;
+}
+.logo{
+	float:left;
+	width:auto;
+	padding-top:20px;
+}
+
+
+
+
+/*----------nevigaion css -------------*/
+
+.nav{
+	float:right;
+	width:auto;
+}
+
+.nav ul{
+	margin:0px auto;
+	width:auto;
+	padding-left:0px;
+	list-style-type:none;
+}
+.nav ul li{
+	float:left;
+	width:auto;
+	padding:0px 0px 0px 2px;
+}
+.nav ul li a{
+	float: left;
+	width: auto;
+	background: none;
+	font-family: "Oswald",sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: #0A63A2;
+	text-transform: uppercase;
+	line-height: 68px;
+	text-decoration: none;
+	padding: 0px 19px;
+	letter-spacing:0.8px;
+	
+}
+.nav ul li a:hover{
+	background: none repeat scroll 0% 0% #0A63A2;
+	color: #FFF;
+}
+.nav ul li .active{
+	float: left;
+	width: auto;
+	background: #0A63A2;
+	font-family: "Oswald",sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 68px;
+	text-decoration: none;
+	padding: 0px 15px;
+	
+}		
+		
+		
+		
+/*----------- nevigation css end-------*/
+
+
+.banner{
+	margin:0px auto;
+	width:100%;
+	border-top:6px solid #0560a0;
+}
+.banner-inner{
+	margin:0px auto;
+	width:100%;
+	border-top:6px solid #0560a0;
+}
+.slide-inner{
+	margin:0px auto;
+	border-bottom:2px solid #0560a0;
+	padding-bottom:2px;
+	height:140px;
+	background:url(../images/banner.png) no-repeat center bottom;
+}
+.slide{
+	margin:0px auto;
+	border-bottom:1px solid #b0b6bb;
+	padding-bottom:2px;
+}
+.slide img{
+	width:100%;
+}
+.footer{
+	margin:0px auto;
+	width:100%;
+	padding-top:1px;
+	border-top:1px solid #04080c
+}
+.four_clum{
+	margin:0px auto;
+	width:100%;
+	background:#04080b;
+	padding:30px 0px 10px 0px;
+}
+.four_clum h6{
+	margin: 0px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	color: #ccc;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+	padding-bottom: 12px;
+	background: url("../images/ft-heading-bg.png") no-repeat scroll left top transparent;
+	padding-left: 17px;
+	line-height: 17px;
+	margin-bottom:8px;
+}
+.four_clum ul{
+	margin:0px auto;
+	list-style-type:none; padding-left:0px;
+}
+.four_clum ul li{
+	list-style-type:none;
+	float:left;
+	width:100%;
+	background:url(../images/dot.png) repeat-x left bottom;
+	padding:8px 0px;
+}
+.four_clum ul li a{
+	color: #C7C8C9;
+	font-family: "Oswald",sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	text-decoration: none;
+	letter-spacing: 0.7px;
+	padding-left: 20px;
+	background: url("../images/blue-dot.png") no-repeat scroll left 4px transparent;
+	line-height: 22px;
+}
+
+.four_clum ul li a:hover{
+	color: #666;
+}
+.socialIcon{
+	padding-top:16px;
+}
+.newslatter{padding-bottom: 50px;
+float: left;
+width: 100%;
+padding-top: 15px;}
+.newslatter .lt{
+	float:left;
+	width:65%;
+}
+.newslatter .lt input{
+	padding: 5px 7px;
+	width: 86%;
+	border: 1px solid #CCC;
+	font-size: 12px;
+	border-radius: 2px;
+}
+.newslatter .rt{
+	float:right;
+	width:30%;
+}
+.newslatter .rt input {
+    padding: 2px 0px;
+    background: none repeat scroll 0% 0% #0A63A2;
+    color: #FFF;
+	width:100%;
+    text-decoration: none;
+    border: medium none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: "Oswald",sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+.copyright{
+	margin: 0px auto;
+	width: 100%;
+	background: url("../images/ft-bg.png") repeat scroll center top transparent;
+	font-family: "Open Sans",sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	color: #EEE;
+	padding: 12px 0px;
+	text-transform: uppercase;
+	border-top: 1px solid #eee;
+}
+
+.content{
+	margin:0px auto;
+	width:100%;
+	padding:22px 0px 35px 0px; 
+}
+.block-row{
+	border-top:1px solid #ebebeb;
+	border-bottom:1px solid #ebebeb;
+	padding:2px 0px;
+	margin-bottom:58px;
+}
+.blocks{
+	margin:0px auto;
+	width:100%;
+	background:url(../images/3block-bg.png) repeat center top;
+	padding:35px 0px;
+}
+.block3{
+	background:#f6f6f6;
+	border:1px solid #dedbdb;
+	border-radius:6px;
+	height:auto;
+}
+.block3 .icon{
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding-top: 22px;
+	padding-bottom: 15px;
+}
+.block3 h6{
+	margin: 0px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	color: #032C56;
+	text-transform: uppercase;
+	text-align: center;
+	clear: both;
+	letter-spacing: 0.4px;
+}
+.block3 p{
+	margin: 0px auto;
+	font-family: "Open Sans",sans-serif;
+	font-size: 13px;
+	text-align: center;
+	padding: 10px 7% 8px 7%;
+	line-height: 22px;color:#202020;
+}
+.block3 .readmore{
+	margin: 0px auto;
+	width: 108px;
+	height: 28px;
+	color: #F2F2F2;
+	font-family: "Open Sans",sans-serif;
+	background: url("../images/readmore.png") no-repeat scroll center top transparent;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	line-height: 24px;
+	font-size: 13px;
+	position: relative;
+	top: 10px;
+}
+.block3 .readmore:hover{
+	margin: 0px auto;
+	width: 108px;
+	height: 28px;
+	color: #F2F2F2;
+	font-family: "Open Sans",sans-serif;
+	background: url("../images/readmore2.png") no-repeat scroll center top transparent;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	line-height: 24px;
+	font-size: 13px;
+	position: relative;
+	top: 10px;
+}
+
+h1{
+	margin: 0px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 25px;
+	font-weight: 300;
+	color: #032C56;
+	text-transform: uppercase;
+	text-align: center;
+	clear: both;
+	letter-spacing: 0.4px;
+	margin-bottom:47px;
+	margin-top:20px;
+}
+.slide-inner h2 {
+    margin: 0px auto;
+    font-family: "Oswald",sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #eee;
+    text-transform: uppercase;
+    clear: both;
+    letter-spacing: 0.4px;
+    text-align: center;
+    padding-top: 65px;
+}
+h2{
+	margin: 0px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	color: #032C56;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 0.4px;
+	margin-bottom:47px;
+	margin-top:20px;
+}
+h3{
+	margin: 0px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	color: #2a2a2a;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 0.4px;
+	margin-bottom:47px;
+	margin-top:20px;
+}
+h4{
+	margin: 0px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: #2a2a2a;
+	text-transform: uppercase;
+	text-align: center;
+	clear: both;
+	letter-spacing: 0.4px;
+	margin-bottom:47px;
+	margin-top:20px;
+}
+h5 {
+    margin: 20px auto 18px;
+    font-family: "Oswald",sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+    color: #2A2A2A;
+    text-transform: uppercase;
+    text-align: left;
+    clear: both;
+    letter-spacing: 0.4px;
+}
+p{
+	margin:0px auto;
+	font-family: "Open Sans",sans-serif;
+	padding:0px 0px 17px 0px;
+	line-height:22px;
+	font-size:13px;
+	color:#202020;
+	text-align:justify;
+}
+
+.content ul {
+    margin: 0px auto;
+    list-style-type: none;
+    padding-left: 0px;
+}
+.content ul li {
+    list-style-type: none;
+	background: url("../images/red-dot.png") no-repeat scroll left 12px transparent;
+	padding: 8px 0px;
+	font-family: "Open Sans",sans-serif;
+	line-height: 16px;
+	font-size: 13px;
+	color: #202020;
+	text-align: justify;
+	padding-left: 22px;
+}
+h6{margin: 20px auto 47px;
+font-family: "Open Sans",sans-serif;
+font-size: 18px;
+font-weight: 300;
+color: #2A2A2A;
+clear: both;
+letter-spacing: 0.4px;}
+
+.faq-btn{
+	width: 80%;
+	color: #FFF;
+	background: url("../images/ft-bg.png") repeat scroll center top transparent;
+	border-radius: 30px;
+	font-size: 14px;
+	font-family: "Open Sans",sans-serif;
+	margin: 0px auto;
+	display: table;
+	text-align: center;
+	text-decoration: navajowhite;
+	text-transform: uppercase;
+	padding: 6px 0px;
+	box-shadow: 1px 3px 0px #ddd;
+	margin-top: 30px;cursor:pointer;
+}
+.faq-btn:hover{
+	width: 80%;
+	color: #eee;
+	background:#111;
+	border-radius: 30px;
+	font-size: 14px;
+	font-family: "Open Sans",sans-serif;
+	margin: 0px auto;
+	display: table;
+	text-align: center;
+	text-decoration: navajowhite;
+	text-transform: uppercase;
+	padding: 6px 0px;
+	box-shadow: 1px 3px 0px #ddd;
+	margin-top: 30px;
+}
+.ct-row{
+	float:left;
+	width:100%;
+	padding-bottom:20px;
+}
+.ct-row2{
+	float:left;
+	width:100%;
+	padding-bottom:20px;
+}
+.ct-row input{
+	float:left;
+	width:92%;
+	padding:8px 5px;
+	border:1px solid #ccc;
+	background:#FFFFFF;
+}
+.ct-row textarea{
+	float:left;
+	width:92%;
+	height:210px;
+	padding:8px 5px;
+	border:1px solid #ccc;
+	background:#FFFFFF;
+}
+.ct-row2 input{
+	float:left;
+	width:auto;
+	border:none;
+	padding:6px 30px;
+	margin-top:2px;
+	cursor:pointer;
+}
+.ct-row2 input:hover{
+	float:left;
+	width:auto;
+	border:none;
+	padding:6px 30px;
+	margin-top:2px;
+}
+.team-hd{
+	background: url("../images/ft-bg.png") repeat scroll center top transparent;
+	color:#FFFFFF;
+	text-transform:uppercase;
+	font-weight:100%;
+	padding:6px 15px;
+	border:1px solid #000;
+}
+.cols-5 img{
+border-radius: 350px;
+border: 1px solid #DDD;
+width: 92%;
+margin-top: 20px;
+margin-bottom: 45px;
+box-shadow: 2px 2px 5px #f2f2f2;
+}
+.cols-5-last img{
+	border-radius: 350px;
+border: 1px solid #DDD;
+width: 92%;
+margin-top: 20px;
+margin-bottom: 45px;
+box-shadow: 2px 2px 5px #f2f2f2;
+}
+
+
+
+
+
+
+/*-------------- start here login page---------*/
+
+.loginfrm{
+	margin: 0px auto 50px;
+	width: 50%;
+	padding: 25px 6% 44px;
+	background: none repeat scroll 0% 0% #EFEFEF;
+	border-radius: 5px;
+	border: 1px solid #E4E4E4;
+}
+.loginfrm h6{
+	margin: 15px 0px 33px 0px;
+	font-family: "Oswald",sans-serif;
+	font-size: 24px;
+	font-weight: 300;
+	color: #032C56;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 0.4px;
+	text-align: center;
+}
+
+.loginfrm .row{
+	margin:0px auto;
+	width:90%;
+	padding-bottom:20px;
+}
+.loginfrm .row input{
+	width:95%;
+	border:1px solid #ccc;
+	padding:10px 10px;
+}
+.loginfrm .row2{
+	margin:0px auto;
+	width:90%;
+	padding-bottom:20px;
+}
+.loginfrm .row2 .lft1{
+	float: left;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 100;
+	color: #032C56;
+}
+.loginfrm .row2 .rgt1{
+	float:right;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 100;
+	color: #032C56;
+}
+.loginfrm .row4{
+	margin: 0px auto;
+	width: 90%;
+	padding-bottom: 0px;
+	padding-top: 22px;
+}
+.loginfrm .row4 .rgt1{
+	float:right;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 100;
+	color: #032C56;
+}
+.loginfrm .row3{
+	margin: 0px auto;
+width: 90%;
+padding-bottom: 31px;
+padding-top: 30px;
+border-bottom: 1px solid #ccc;
+}
+.loginfrm .row3 .lft1{
+	float: left;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 100;
+	color: #032C56;
+}
+.loginfrm .row3 .rgt1{
+	float:right;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: 100;
+	color: #032C56;
+}
+.loginfrm .row3 .rgt1 input{
+	padding: 8px 36px;
+	background: none repeat scroll 0% 0% #0A63A2;
+	color: #FFF;
+	text-decoration: none;
+	border: medium none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: "Oswald",sans-serif;
+	font-size: 17px;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+a {color:#0A63A2; text-decoration:none;}
+a:hover {color:#04080B; text-decoration:underline;}
+
+/*--------------Start here My Contriutions page---------*/
+
+.contriutions{
+	margin:0px auto;
+	width:100%;
+	margin-bottom:30px;
+}
+.contriutions .row{ 
+	font-family: "Oswald",sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #032C56; letter-spacing:1px; text-transform:uppercase;
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;
+	padding:13px 6px;
+}
+.contriutions .row .col-1{ 
+	float:left;
+	width:12%;
+	border-right:1px solid #ddd; margin-right:3%;
+}
+.contriutions .row .col-2{ 
+	float:left;
+	width:22%;border-right:1px solid #ddd; margin-right:3%;
+}
+.contriutions .row .col-3{ 
+	float:left;
+	width:25%;
+}
+
+.contriutions .row2{ 
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	color: #333; letter-spacing:0.2px;
+	border-bottom:1px solid #eee;
+	padding:12px 6px;
+}
+.contriutions .row2 .col-1{ 
+	float:left;
+	width:12%;
+	border-right:1px solid #eee; margin-right:3%;
+}
+.contriutions .row2 .col-2{ 
+	float:left;
+	width:22%;border-right:1px solid #eee; margin-right:3%;
+}
+.contriutions .row2 .col-3{ 
+	float:left;
+	width:25%;
+}
+
+/*--------------Start here SETTING page---------*/
+
+
+.setting_page{
+	margin:0px auto;
+	width:100%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	
+}
+.setting_page .block{
+	margin: 0px auto 30px;
+background: none repeat scroll 0% 0% #EEE;
+padding: 20px 20px 20px 20px;
+}
+.setting_page .block h6{
+	margin: 4px auto 10px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	color: #032C56;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 0.4px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 11px;
+}
+.setting_page .block .row{
+	margin: 0px auto;
+	padding: 10px 10px
+}
+.setting_page .block .row1{
+	margin: 0px auto;
+	padding: 00px 10px 00px 10px;
+}
+.setting_page .block .row1 input{
+	border: 1px solid #CCC;
+	padding: 6px;
+	width:220px;
+}
+.setting_page .block .row .lft1{
+	margin:0px auto;
+	float:left;
+	width:24%; margin-right:5%;
+}
+.setting_page .block .row .rgt1{
+	margin:0px auto;
+	float:left;
+	width:65%; margin-right:5%;
+}
+.setting_page .block .row_b{
+	margin: 0px auto;
+	padding: 30px 10px 10px 10px;
+}
+
+.button{
+   padding: 5px 20px;
+	background: none repeat scroll 0% 0% #0A63A2;
+	color: #FFF;
+	text-decoration: none;
+	border: medium none;
+	border-radius: 2px;
+	cursor: pointer;
+	font-family: "Oswald",sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+}
+
+
+
+
+
+/*---------- update profile page ---------*/
+
+.update_profile{
+	margin:0px auto;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.update_profile .leftCl{
+	float:left;
+	width:58%;
+}
+.update_profile .rgtCl{
+	float:right;
+	width:26%;
+}
+.update_profile h6{
+	margin: 10px auto 20px auto;
+	font-family: "Oswald",sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #333;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 0.4px;
+	border-bottom: 1px solid #CCC;
+	padding-bottom: 11px;
+	
+}
+.update_profile .row{
+	margin:0px auto;
+	width:100%;
+	padding-bottom:22px;
+	float:left;
+}
+.update_profile .row-b{
+	margin:0px auto;
+	width:100%;
+	padding-bottom:22px; padding-top:22px;
+	float:left;
+}
+.update_profile .row .p_left{
+	float:left;
+	width:30%;
+	padding-right:10%;
+}
+.update_profile .row .p_right{
+	float: left;
+	background: none repeat scroll 0% 0% #EEE;
+	width: 55%;
+	padding: 10px 10px;
+}
+.update_profile .row .p_right img{
+	width:80px;
+	height:80x;
+}
+.update_profile .row .p_right select{
+	padding:5px;
+	width:100%;
+	border:1px solid #ccc;
+	margin-bottom:12px;
+}
+.update_profile .row .p_right textarea{
+	padding:5px;
+	width:95%;
+	border:1px solid #ccc;
+	height:80px;margin-bottom:12px;
+}
+.update_profile .row .p_right input{
+	padding:5px;
+	width:95%;
+	border:1px solid #ccc;
+	margin-bottom:12px;
+}
+
+.upload_photo{
+	float: left;
+	width: 70%;
+	font-family: "Oswald",sans-serif;
+	font-size: 19px;
+	font-weight: 300;
+	color: #333;
+	border: 7px solid #EEE;
+	text-align: center;
+	padding: 15px 0px;
+}
+.upload_photo img{
+	width:80%;
+	margin-top:8px;
+}
+
+
+
+
+/*---------- SIGN UP page ---------*/
+
+
+.signL{
+	float:left;
+	width:50%
+}
+.signL h5{
+	margin: 20px auto 47px;
+	font-family: "Oswald",sans-serif;
+	font-size: 60px;
+	font-weight: 600;
+	color: #0A63A2;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 5px;
+	padding-left:10%;
+	line-height: 60px;
+}
+.signL h5 span{color:#bc0004;}
+.signR{
+	float:right;
+	width:35%
+}
+.signL h6{
+	margin: 20px auto 47px;
+	font-family: "Oswald",sans-serif;
+	font-size: 21px;
+	font-weight: 300;
+	color: #333;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 1px;
+	padding-left: 10%;
+	line-height: 39px;
+	border-bottom: none;
+}
+
+.signR h6{
+	margin: 0px auto 25px;
+	font-family: "Oswald",sans-serif;
+	font-size: 21px;
+	font-weight: 300;
+	color: #333;
+	text-transform: uppercase;
+	clear: both;
+	letter-spacing: 1px;
+	line-height: 39px;
+	border-bottom: none;
+	text-align:center;
+}
+.signR .row{
+	margin:0px auto;
+	width:99%;
+	padding-bottom:17px;
+}
+.signR .row input{
+	padding: 10px 7px;
+border: 1px solid #CCC;
+font-size: 13px;
+border-radius: 2px;
+width: 92%;
+}
+.ctr{text-align:center;}
+
+.signR .row2{
+	margin: 0px auto;
+	width: 99%;
+	padding-bottom: 19px;
+	line-height: 25px;
+}
+.signR .row2 .left{
+	float:left;
+	width:auto;
+	padding-top:0px;
+}
+.signR .row2 .right{
+	float: right;
+	width: auto;
+	padding-right: 4%;
+}
+.signR .row2 .right .cls{
+	float:left;
+	width:auto;
+	padding-left:6px;
+}
+.signR .row2 .right .cls select {
+    padding: 3px 7px;
+    border: 1px solid #CCC;
+    font-size: 13px;
+    border-radius: 2px;
+    width:auto;
+}
+.signR .row2 .rdN{
+	float:left;
+	width:auto;
+	padding-right:8px;
+}
+.signR .row2 .rdIN{
+	float:left;
+	width:auto;
+	padding-right:15px;
+}
+
+.signR .row3{
+	margin: 0px auto;
+	width: 99%;
+	padding-bottom: 29px;
+	padding-top: 5px;
+	line-height: 25px;
+	text-align: right;
+	font-weight: bold;
+	color:#333;
+}
