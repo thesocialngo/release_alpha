@@ -33,7 +33,7 @@
         </div>
         <div class="login_link">
         	<a href="#">LOGIN</a> |
-            <a href="#">SIGN UP</a>
+            <a href="/socialNetwork/user/SignUp">SIGN UP</a>
         </div>
         <div class="clear"></div>
     </div>	
@@ -59,10 +59,10 @@
         <div class="nav">
         	
             <ul>
-            	<li><a href="#" class="active">HOME</a></li>
-                <li><a href="static/Explore.jsp">Explore</a></li>           
-                <li><a href="#">How it works</a></li>               
-                <li><a href="#">Start your movement</a></li>
+            	<li><a href="/socialNetwork/" class="active">HOME</a></li>  
+                <li><a href="/socialNetwork/explore">Explore</a></li>           
+                <li><a href="/socialNetwork/howItWorks">How it works</a></li>               
+                <li><a href="/socialNetwork/StartYourMovement">Start your movement</a></li>
             </ul>
             
         </div>

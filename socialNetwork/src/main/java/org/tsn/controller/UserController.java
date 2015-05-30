@@ -22,7 +22,7 @@ import org.tsn.tos.UserProfile;
 	    @Autowired
 	    private IUserProfileManager profileDataManager;
 	    
-	    @RequestMapping(value = "/", method = RequestMethod.GET)
+	    @RequestMapping(value = "/SignUp", method = RequestMethod.GET)
 	    public String loadUserProfile(ModelMap map)
 	    {
 	    	//map.addAttribute("question", "");

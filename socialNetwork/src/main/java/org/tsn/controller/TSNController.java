@@ -23,16 +23,29 @@ import org.tsn.tos.UserProfile;
 	    private IUserProfileManager profileDataManager;
 	    
 	    @RequestMapping(value = "/", method = RequestMethod.GET)
-	    public String loadUserProfile(ModelMap map)
-	    {
-	    	//map.addAttribute("question", "");
-	    	UserProfile profile = new UserProfile();
-	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
-	        
-	        //return  "profile/updateprofile";
+	    public String doView(ModelMap map)
+	    { 
 	    	return  "general/index";
 	    }
 	    
+	    @RequestMapping(value = "/explore", method = RequestMethod.GET)
+	    public String doExplore(ModelMap map)
+	    {
+	    	 
+	    	return  "general/Explore";
+	    }
+	    @RequestMapping(value = "/howItWorks", method = RequestMethod.GET)
+	    public String doHowItWorks(ModelMap map)
+	    {
+	    	 
+	    	return  "general/how-it-works";
+	    }
+	    @RequestMapping(value = "/StartYourMovement", method = RequestMethod.GET)
+	    public String doStartYourMovement(ModelMap map)
+	    {
+	    	 
+	    	return  "general/Start-your-movement";
+	    }
 	    
 	 
 	     
