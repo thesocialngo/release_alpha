@@ -30,7 +30,7 @@ import org.tsn.tos.UserProfile;
 	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
 	        
 	        //return  "profile/updateprofile";
-	    	return  "profile/SignUp";//"profile/bkpSignUp";
+	    	return  "profile/Profile-SignUp";//"profile/bkpSignUp";
 	    }
 	    
 	    @RequestMapping(value = "/test", method = RequestMethod.GET)
@@ -41,7 +41,7 @@ import org.tsn.tos.UserProfile;
 	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
 	        
 	        //return  "profile/updateprofile";
-	    	return  "profile/SignUp";//"profile/bkpSignUp";
+	    	return  "common/header";//"profile/bkpSignUp";
 	    }
 	    
 	    @RequestMapping(value = "/edit", method = RequestMethod.POST)
@@ -51,7 +51,18 @@ import org.tsn.tos.UserProfile;
 	    	
 	    	model.addAttribute("userprofile", profileDataManager.getUserProfile(profile));
 	    	profileDataManager.addUserProfile(profile);  
-	        return  "profile/SignUp";
+	        return  "profile/Update-Profile";
+	    }
+	    
+	    //TODO: following method to be deleted , edit profile can not be called with a get type/
+	    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+	    public String getUserProfile(@ModelAttribute UserProfile profile, Model model)  
+	    {
+	    	logger.info("adding new profile ."+profile);
+	    	
+	    	model.addAttribute("userprofile", profileDataManager.getUserProfile(profile));
+	    	//profileDataManager.addUserProfile(profile);  
+	        return  "profile/Update-Profile";
 	    }
 	    
 	    @RequestMapping(value = "/add", method = RequestMethod.GET)

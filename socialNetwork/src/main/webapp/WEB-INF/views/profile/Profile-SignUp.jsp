@@ -21,62 +21,9 @@
   
 </head>
 <body>
-
-<!------------ top row start-------------->
-
-<div class="toprow">
-	<div class="container">
-    	<div class="search">
-          <input type="text" value="" class="input1" /><input type="button" value="" class="input2" />
-        </div>
-        <div class="login_link">
-        	<a href="#">LOGIN</a> |
-            <a href="#">SIGN UP</a>
-        </div>
-        <div class="clear"></div>
-    </div>	
-</div>
-
-<!------------ top row end-------------->
-
-<!------------ header start-------------->
-
-<div class="header">
-	<div class="container">
-    	<div class="logo">
-        	<img src="images/logo.png" alt="logo" />
-        </div>
-        
-        <div class="nav">
-        	
-            <ul>
-            	<li><a href="#" class="active">HOME</a></li>
-                <li><a href="#">Explore</a></li>            
-                <li><a href="#">How it works</a></li>               
-                <li><a href="#">Start your movement</a></li>
-            </ul>
-            
-        </div>
-   
-        
-    </div>
-    <div class="clear"></div>
-</div>
-
-<!------------ header End-------------->
-
-<!------------ banner start-------------->
-
-<div class="banner-inner">
-	<div class="slide-inner">
-    	<h2>Frequently asked questions</h2>
-    </div>
-    <div class="clear"></div>
-</div>
-
-<!------------ banner End-------------->
-
-
+ 
+ <jsp:include page="../common/header.jsp"></jsp:include>
+ 
 <!------------ CONTENT START-------------->
 
 <section class="content">

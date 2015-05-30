@@ -30,7 +30,7 @@ import org.tsn.tos.UserProfile;
 	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
 	        
 	        //return  "profile/updateprofile";
-	    	return  "index";
+	    	return  "general/index";
 	    }
 	    
 	    

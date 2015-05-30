@@ -3,6 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+
 <html lang="en">
 <head>
   <title>NGO</title>
@@ -23,49 +24,9 @@
     
 </head>
 <body>
+ <jsp:include page="../common/header.jsp"></jsp:include>
+ 
 
-<!------------ top row start-------------->
-
-<div class="toprow">
-	<div class="container">
-    	<div class="search">
-          <input type="text" value="" class="input1" /><input type="button" value="" class="input2" />
-        </div>
-        <div class="login_link">
-        	<a href="#">LOGIN</a> |
-            <a href="#">SIGN UP</a>
-        </div>
-        <div class="clear"></div>
-    </div>	
-</div>
-
-<!------------ top row end-------------->
-
-<!------------ header start-------------->
-
-<div class="header">
-	<div class="container">
-    	<div class="logo">
-        	<img src="images/logo.png" alt="logo" />
-        </div>
-        
-        <div class="nav">
-        	
-            <ul>
-            	<li><a href="#" class="active">HOME</a></li>
-                <li><a href="static/Explore.jsp">Explore</a></li>            
-                <li><a href="#">How it works</a></li>               
-                <li><a href="#">Start your movement</a></li>
-            </ul>
-            
-        </div>
-   
-        
-    </div>
-    <div class="clear"></div>
-</div>
-
-<!------------ header End-------------->
 
 <!------------ banner start-------------->
 
