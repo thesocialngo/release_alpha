@@ -41,7 +41,7 @@ import org.tsn.tos.UserProfile;
 	    	map.addAttribute("userprofile", profileDataManager.getUserProfile(profile));   
 	        
 	        //return  "profile/updateprofile";
-	    	return  "common/header";//"profile/bkpSignUp";
+	    	return  "common/footer";//"profile/bkpSignUp";
 	    }
 	    
 	    @RequestMapping(value = "/edit", method = RequestMethod.POST)

@@ -46,6 +46,12 @@ import org.tsn.tos.UserProfile;
 	    	 
 	    	return  "general/Start-your-movement";
 	    }
+	    @RequestMapping(value = "/TermAndConditions", method = RequestMethod.GET)
+	    public String doTermsAndConditions(ModelMap map)
+	    {
+	    	 
+	    	return  "general/Terms-Conditions";
+	    }
 	    
 	 
 	     

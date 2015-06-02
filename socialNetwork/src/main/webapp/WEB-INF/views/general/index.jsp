@@ -120,76 +120,7 @@ well as extensive professional experience.
 <div class="clear"></div>
 </section>
 
-
 <!------------ CONTENT END-------------->
-
-
-<!------------ FOOTER START-------------->
-
-<div class="footer">
-
-	<div class="four_clum">
-    	<div class="container">
-        	
-            <div class="cols-4">
-            	<h6>ABOUT US</h6>
-                <ul>
-                	<li><a href="#">Login</a></li>
-                    <li><a href="#">Signup</a></li>
-                    <li><a href="#">Donate</a></li>
-                   <li><a href="#">Movements</a></li>
-                   <li><a href="#">Jobs</a></li>
-                </ul>
-            </div>
-            
-            <div class="cols-4">
-            	<h6>The Social NGO</h6>
-               <ul>
-                	<li><a href="#">About</a></li>
-                    <li><a href="#">Why</a></li>
-                    <li><a href="#">Fees</a></li>
-                   <li><a href="#">Team</a></li>
-                    <li><a href="#">Media</a></li>
-                     
-                </ul>
-            </div>
-            
-            <div class="cols-4">
-                <h6>Help</h6>
-                 <ul>
-                    <li><a href="#">Guidelines</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact</a></li>
-                   <li><a href="#">Terms of Use</a></li>
-                   <li><a href="#">Privacy policy</a></li>
-                </ul>
-            </div>
-            
-            <div class="cols-4-last">
-            <h6>Connect With us</h6>
-            <div class="socialIcon">
-                  <div class="cols-3"><img src="images/facebook.png" alt="facebook" /></div>
-                  <div class="cols-3"><img src="images/google-plus.png" alt="google plus" /></div>
-                  <div class="cols-3-last"><img src="images/twitter.png" alt="twitter" /></div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    
-    <div class="copyright">
-    	<div class="container">
-        	<div class="cols-2">COPYRIGHT &copy; Prayas socialngo foundation</div>
-            <div class="cols-2-last algn_rgt">
-            	DESIGN AND DEVELOP BY :: I3WEBWORLD.COM
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    
-    
-</div>
-
-<!------------ FOOTER END-------------->
+<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>
