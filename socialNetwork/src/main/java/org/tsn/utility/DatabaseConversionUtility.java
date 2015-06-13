@@ -16,10 +16,18 @@ public class DatabaseConversionUtility extends BaseUtility {
 		if(null == userProfile)
 			return null;
 		
+		 
+		
+		TProfile profileEntity = new TProfile();
+		
+		updateTprofile(userProfile, profileEntity);
+		return profileEntity;
+	}
+	private void updateTprofile(UserProfile userProfile, TProfile profileEntity)
+	{
 		TLogin login = new TLogin();
 		login.setUserName(userProfile.getEmail());
 		login.setPassword( userProfile.getPassword());
-		TProfile profileEntity = new TProfile();
 		
 		profileEntity.setFirstName(userProfile.getFirstName());
 		profileEntity.setLastName(userProfile.getLastName());
@@ -38,6 +46,14 @@ public class DatabaseConversionUtility extends BaseUtility {
 		//profileEntity.setTEducation( new TEducation() );
 		//profileEntity.setTOccupation(new TOccupation());
 		//profileEntity.setTSecurityAnswerses( new TSecurityAnswer);
-		return profileEntity;
+	}
+	public TProfile getUserProfile(UserProfile userProfile, TProfile profile)
+	{
+		if(null == profile)
+			return null;
+
+		updateTprofile(userProfile, profile);
+		
+		return profile;
 	}
 }

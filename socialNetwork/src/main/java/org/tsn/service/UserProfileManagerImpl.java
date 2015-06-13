@@ -12,16 +12,19 @@ public class UserProfileManagerImpl implements IUserProfileManager {
 
 	@Override
 	public UserProfile getUserProfile(UserProfile profile) {
-		// TODO Auto-generated method stub
 		return profileDAO.getUserProfile(profile);
 	}
 
 	@Override
 	public void addUserProfile(UserProfile profile) {
-		// TODO Auto-generated method stub
 		
 		  profileDAO.addUserProfile(profile);
-		}
-
+	}
+	
+	@Override
+	public void updateUserProfile(UserProfile profile)
+	{
+		profileDAO.updateUserProfile(profile);
+	}
 	 
 }

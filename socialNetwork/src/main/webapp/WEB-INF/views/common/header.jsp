@@ -52,7 +52,7 @@
 <div class="header">
 	<div class="container">
     	<div class="logo">
-    	<img src="<c:url value="/images/logo.png"/> " >
+    	<img src="<c:url value="/images/logo.jpg"/> " >
         	<!-- <img src="images/logo.png" alt="logo" /> -->
         </div>
         

@@ -21,61 +21,7 @@
   
 </head>
 <body>
-
-<!------------ top row start-------------->
-
-<div class="toprow">
-	<div class="container">
-    	<div class="search">
-          <input type="text" value="" class="input1" /><input type="button" value="" class="input2" />
-        </div>
-        <div class="login_link">
-        	<a href="#">LOGIN</a> |
-            <a href="#">SIGN UP</a>
-        </div>
-        <div class="clear"></div>
-    </div>	
-</div>
-
-<!------------ top row end-------------->
-
-<!------------ header start-------------->
-
-<div class="header">
-	<div class="container">
-    	<div class="logo">
-        	<img src="../images/logo.png" alt="logo" />
-        </div>
-        
-        <div class="nav">
-        	
-            <ul>
-            	<li><a href="#" class="active">HOME</a></li>
-                <li><a href="#">Explore</a></li>            
-                <li><a href="#">How it works</a></li>               
-                <li><a href="#">Start your movement</a></li>
-            </ul>
-            
-        </div>
-   
-        
-    </div>
-    <div class="clear"></div>
-</div>
-
-<!------------ header End-------------->
-
-<!------------ banner start-------------->
-
-<div class="banner-inner">
-	<div class="slide-inner">
-    	<h2>Frequently asked questions</h2>
-    </div>
-    <div class="clear"></div>
-</div>
-
-<!------------ banner End-------------->
-
+ <jsp:include page="../common/header.jsp"></jsp:include>
 
 <!------------ CONTENT START-------------->
 
@@ -84,7 +30,7 @@
     <div class="container">
     <h2>Update Your Profile</h2>
    
-    	
+    	 <form:form class="form"  method="post" action="updateProfile" commandName="userprofile">
         <div class="update_profile">
         <h6>Build your profile and show the world what u care about</h6>
         	
@@ -103,7 +49,14 @@
             
             <div class="row">
             	<div class="p_left">Sex</div>
-                <div class="p_right">Male</div>
+                <div class="p_right">
+					<form:select path="gender">
+						<form:option value="M">Male</form:option>
+						<form:option value="F">Female</form:option>
+						<form:option selected="selected" value="O">Gender</form:option>
+					</form:select>
+		 
+</div>
             </div>
             
              <div class="row">
@@ -114,7 +67,8 @@
             
              <div class="row">
             	<div class="p_left">Highest Education</div>
-                <div class="p_right"><select>
+                <div class="p_right">
+                <select>
                 	<option>Select Class</option>
                 	<option>10th </option>
                     <option>12th </option>
@@ -167,7 +121,8 @@
             </div>
             
             <div class="row-b">
-            	<input type="button" class="button" value="Save and Review Your Profile" />
+              <input class="button" type="submit"  value="Save and Review Your Profile" >
+            	<!-- <input type="button" class="button" value="Save and Review Your Profile" /> -->
             </div>
             
             
@@ -176,7 +131,7 @@
          
          
         </div>
-        
+       </form:form> 
         
       
     </div>
@@ -185,83 +140,6 @@
 
 
 <!------------ CONTENT END-------------->
-
-
-<!------------ FOOTER START-------------->
-
-<div class="footer">
-
-	<div class="four_clum">
-    	<div class="container">
-        	
-            <div class="cols-4">
-            	<h6>ABOUT US</h6>
-                <ul>
-                	<li><a href="#">Login</a></li>
-                    <li><a href="#">Signup</a></li>
-                    <li><a href="#">Donate</a></li>
-                   <li><a href="#">Movements</a></li>
-                   <li><a href="#">Jobs</a></li>
-                </ul>
-            </div>
-            
-            <div class="cols-4">
-            	<h6>The Social NGO</h6>
-               <ul>
-                	<li><a href="#">About</a></li>
-                    <li><a href="#">Why</a></li>
-                    <li><a href="#">Fees</a></li>
-                   <li><a href="#">Team</a></li>
-                    <li><a href="#">Media</a></li>
-                     
-                </ul>
-            </div>
-            
-            <div class="cols-4">
-                <h6>Help</h6>
-                 <ul>
-                    <li><a href="#">Guidelines</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact</a></li>
-                   <li><a href="#">Terms of Use</a></li>
-                   <li><a href="#">Privacy policy</a></li>
-                </ul>
-            </div>
-            
-            <div class="cols-4-last">
-            <h6>Join the SocialNGo Movement</h6>
-            <div class="newslatter">
-            	<div class="lt">
-                	<input type="text" value="Email Id" />
-                </div>
-                <div class="rt">
-                	<input type="button" value="Sign Up" class="button" />
-                </div>
-            </div>
-            <div class="socialIcon">
-                  <div class="cols-4"><img src="../images/facebook.png" alt="facebook" /></div>
-                  <div class="cols-4"><img src="../images/google-plus.png" alt="google plus" /></div>
-                  <div class="cols-4"><img src="../images/twitter.png" alt="twitter" /></div>
-                  <div class="cols-4-last"><img src="../images/tube.png" alt="youtube" /></div>
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-    
-    <div class="copyright">
-    	<div class="container">
-        	<div class="cols-2">COPYRIGHT &copy; Prayas socialngo foundation</div>
-            <div class="cols-2-last algn_rgt">
-            	DESIGN AND DEVELOP BY :: I3WEBWORLD.COM
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    
-    
-</div>
-
-<!------------ FOOTER END-------------->
+<jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
 </html>

@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 public class UserProfile extends BaseTransferObject{
-	
 	String firstName;
 	String lastName;
 	String password;
@@ -287,6 +286,11 @@ public class UserProfile extends BaseTransferObject{
 			+ ", securityAnswer_4=" + securityAnswer_4 + ", securityAnswer_5="
 			+ securityAnswer_5 + ", securityQuestions=" + securityQuestions
 			+ ", securityAnwers=" + securityAnwers + "]";
+	}
+	public Object getId()
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 	 
 	

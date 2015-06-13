@@ -40,4 +40,13 @@ public class UserProfileConversionUtility {
 		result.setSecurityQuestions(questions);
 	}
 
+	public boolean updateUserProfile(UserProfile updatedProfileData,UserProfile sessionProfile)
+	{
+		if(null == sessionProfile || null == updatedProfileData)
+			return false;
+		
+		sessionProfile.setGender(updatedProfileData.getGender() );
+		
+		return true;
+	}
 }

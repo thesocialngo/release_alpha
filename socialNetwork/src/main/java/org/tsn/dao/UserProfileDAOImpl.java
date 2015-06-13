@@ -1,5 +1,6 @@
 package org.tsn.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -49,4 +50,37 @@ public class UserProfileDAOImpl implements IUserProfileDAO{
 		}
 	}
 
+	@Override
+	@Transactional
+	public void updateUserProfile(UserProfile userProfile)
+	{
+		try {
+			TProfile profile  = getProfile (userProfile.getEmail());// (TProfile) template.load(TProfile.class, userProfile.getId());
+			
+			DatabaseConversionUtility.shared.getUserProfile(userProfile,profile);
+			
+			logger.info("persisting profile :"+profile);
+			this.sessionFactory.getCurrentSession().update(profile);  
+			
+			 logger.info("persist successful");
+		} catch (RuntimeException re) {
+			logger.error("FAILED TO ADD RECORD", re);
+		}
+	}
+
+	private TProfile getProfile(String email)
+	{
+		List<TProfile> profiles = new ArrayList<TProfile>();
+		 
+		profiles = sessionFactory.getCurrentSession()
+			.createQuery("from TProfile where emailId=?")
+			.setParameter(0, email)
+			.list();
+ 
+		if (profiles.size() > 0) {
+			return profiles.get(0);
+		} else {
+			return null;
+		}
+  	}
 }

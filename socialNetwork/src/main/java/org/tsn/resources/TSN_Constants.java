@@ -21,4 +21,6 @@ public interface TSN_Constants {
 	public final static String	DEFAULT_TABLE_TEXT	= "default";
 	
 	public final static double	NOT_APPLICABLE	= Double.parseDouble(String.valueOf(Integer.MIN_VALUE));
+	
+	public final static String	RUNTIME_ERROR_PROFILE_NOT_FOUND	= "default"; 
 }

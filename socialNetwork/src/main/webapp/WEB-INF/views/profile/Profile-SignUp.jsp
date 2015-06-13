@@ -2,6 +2,9 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ 
+<%@ taglib prefix="ca" uri="/WEB-INF/taglib/constantAccess.tld"%>
+
 <html lang="en">
 <head>
   <title>NGO</title>
@@ -36,7 +39,7 @@
       
         <div class="signL">
         	<p>
-            	Your use of this website (the “Site”) constitutes your acceptance of the terms of this Privacy policy (the “Policy”). By accepting this Policy. 
+            	Your use of this website   constitutes your acceptance of the terms of this Privacy policy (the “Policy”). By accepting this Policy. 
             </p>
             
             <h5>
@@ -48,18 +51,19 @@
             <h6>come join hands with us to bridge the Gap</h6>
             
         </div>
-      <form:form class="form"  method="post" action="edit" commandName="userprofile">
+        <%-- <ca:session constant='USER_PROFILE' /> --%>
+      <form:form class="form"  method="post" action="SignUp" commandName="userprofile">
          <div class="signR">
          	
           <h6>Sign up with email</h6>
           
           <div class="row">
-          <form:input placeholder="First Name" path="firstName" value="Frist Name"></form:input>
+          <form:input placeholder="Fairst Name" path="firstName"  ></form:input>
           	<!-- <input type="text" value="Frist Name" /> -->
           </div>
           
            <div class="row">
-            <form:input placeholder="Last Name"  path="lastName" value="Last Name"></form:input>
+            <form:input placeholder="Last Name"  path="lastName"  ></form:input>
           <!-- 	<input type="text" value="Last Name" /> -->
           </div>
           

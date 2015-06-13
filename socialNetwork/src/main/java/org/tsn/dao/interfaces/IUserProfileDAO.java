@@ -6,4 +6,5 @@ public interface IUserProfileDAO {
 
 	public void addUserProfile(UserProfile profile);
 	UserProfile getUserProfile(UserProfile profile);
+	public void updateUserProfile(UserProfile profile);
 }

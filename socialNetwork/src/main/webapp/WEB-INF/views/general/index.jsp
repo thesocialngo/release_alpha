@@ -41,7 +41,7 @@
 
 
 <!------------ CONTENT START-------------->
-
+  
 <section class="content">
 	
     <div class="block-row">	
