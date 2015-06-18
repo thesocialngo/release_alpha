@@ -105,12 +105,20 @@ import org.tsn.utility.UserProfileConversionUtility;
 	
 				profileDataManager.updateUserProfile(sessionProfileData);  
 		    	session.setAttribute(SessionConstants.USER_PROFILE, sessionProfileData);
+		    	//model.addAttribute(arg0)
 		    	return  "profile/Update-Profile";
 			}
 	    	return "errorPage";
 	    	
 	    }
-	    
+		/*@RequestMapping(value = "/", method = RequestMethod.GET)
+	    public String listsecurityQuestions(ModelMap map)
+	    {
+	    	map.addAttribute("question", "");
+	    	map.addAttribute("masterRecords", masterDataManager.getRecords());   
+	        
+	        return  "admin/index";
+	    }*/
 	    
 	    @RequestMapping(value = "/add", method = RequestMethod.GET)
 	    public String addUserProfile(@ModelAttribute(value="userprofile") UserProfile userProfile, BindingResult result)
@@ -120,6 +128,13 @@ import org.tsn.utility.UserProfileConversionUtility;
 	    }
 	 
 	     
-	 
+	    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+	    public String doLogout( Model model,HttpSession session)  
+	    {
+	    	UserProfile profile = (UserProfile) session.getAttribute( SessionConstants.USER_PROFILE);
+	    	session.invalidate();
+	    	 
+	        return  "general/index";
+	    }	 
 
 }

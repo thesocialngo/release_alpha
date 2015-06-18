@@ -58,27 +58,27 @@
           <h6>Sign up with email</h6>
           
           <div class="row">
-          <form:input placeholder="Fairst Name" path="firstName"  ></form:input>
+          <form:input placeholder="Fairst Name" path="firstName"  value=":${userprofile.firstName}" ></form:input>
           	<!-- <input type="text" value="Frist Name" /> -->
           </div>
           
            <div class="row">
-            <form:input placeholder="Last Name"  path="lastName"  ></form:input>
+            <form:input placeholder="Last Name"  path="lastName" value="${userprofile.lastName}"  ></form:input>
           <!-- 	<input type="text" value="Last Name" /> -->
           </div>
           
            <div class="row">
-           <form:input class="single-row"  path="email" placeholder="Email Id"></form:input> 
+           <form:input class="single-row"  path="email" placeholder="Email Id" value="${userprofile.email}" ></form:input> 
           	<!-- <input type="text" value="Email Id" /> -->
           </div>
           
            <div class="row">
-           <form:input class="single-row"  path="password" placeholder="Password"></form:input>
+           <form:input class="single-row"  path="password" placeholder="Password" value="${userprofile.password}" ></form:input>
           	<!-- <input type="text" value="Password" /> -->
           </div>
           
            <div class="row">
-          	<form:input class="single-row"  path="rePassword" placeholder="Retype Password"></form:input>
+          	<form:input class="single-row"  path="rePassword" placeholder="Retype Password" value=":${userprofile.rePassword}" ></form:input>
           <!-- <input type="text" value="Reconfirm password" /> -->
           </div>
           

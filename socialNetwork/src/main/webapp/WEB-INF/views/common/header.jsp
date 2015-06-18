@@ -32,8 +32,13 @@
           <input type="text" value="" class="input1" /><input type="button" value="" class="input2" />
         </div>
         <div class="login_link">
-        	<a href="#">LOGIN</a> |
-            <a href="/socialNetwork/user/SignUp">SIGN UP</a>
+<c:choose>
+<c:when test="${empty userprofile }"><a href="#">LOGIN</a> | <a href="/socialNetwork/user/SignUp">SIGN UP</a></c:when>
+<c:otherwise><a href="/socialNetwork/user/logout">LOGOUT</a> </c:otherwise>
+</c:choose>
+ 
+ 
+           
         </div>
         <div class="clear"></div>
     </div>	

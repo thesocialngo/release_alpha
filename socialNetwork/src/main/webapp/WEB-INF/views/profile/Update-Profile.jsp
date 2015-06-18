@@ -9,6 +9,8 @@
 <link href="<c:url value="/css/style.css" />" type="text/css"	rel="stylesheet" media="all"/>
 <link href="<c:url value="/css/reset.css" />" type="text/css"rel="stylesheet" media="all"/>
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,100,500,600,700' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   
   <!--[if lt IE 7]>
   	<link rel="stylesheet" href="Style/ie/ie6.css" type="text/css" media="all">
@@ -17,7 +19,12 @@
   	<script type="text/javascript" src="js/html5.js"></script>
     <script type="text/javascript" src="js/IE9.js"></script>
   <![endif]-->
-  
+<script>
+choseSelectedOption()
+{
+	document.getElementById("orange").selected = true;
+}
+</script>
   
 </head>
 <body>
@@ -50,10 +57,13 @@
             <div class="row">
             	<div class="p_left">Sex</div>
                 <div class="p_right">
-					<form:select path="gender">
-						<form:option value="M">Male</form:option>
-						<form:option value="F">Female</form:option>
-						<form:option selected="selected" value="O">Gender</form:option>
+                
+                updated gender :${userprofile.gender}
+                updated firstname :${userprofile.firstName}
+					<form:select path="gender" id="gender">
+						<form:option id="M" value="M">Male</form:option>
+						<form:option id="F" value="F">Female</form:option>
+						<form:option selected="true" value="O">Gender</form:option>
 					</form:select>
 		 
 </div>
@@ -142,4 +152,17 @@
 <!------------ CONTENT END-------------->
 <jsp:include page="../common/footer.jsp"></jsp:include>
 </body>
+ <script language="javascript" type="text/javascript">
+ $(function(){
+ 	
+ 	$('.body').load( function() {
+			$("select gender #F").addClass("selected");
+		}); 
+});
+ 
+ 
+  
+ 
+
+</script>
 </html>
