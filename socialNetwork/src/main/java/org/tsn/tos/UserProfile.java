@@ -4,6 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 public class UserProfile extends BaseTransferObject{
+
+	private static final long	serialVersionUID	= -3395434595437952107L;
+	
+	boolean isValidProfile = false;
+	boolean isAdmin = false;
 	String firstName;
 	String lastName;
 	String password;
@@ -266,6 +271,15 @@ public class UserProfile extends BaseTransferObject{
 	{
 		this.rePassword = rePassword;
 	}
+	
+	public boolean isValidProfile()
+	{
+		return isValidProfile;
+	}
+	public void setValidProfile(boolean isValidProfile)
+	{
+		this.isValidProfile = isValidProfile;
+	}
 	@Override
 	public String toString()
 	{
@@ -291,6 +305,14 @@ public class UserProfile extends BaseTransferObject{
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public boolean isAdmin()
+	{
+		return isAdmin;
+	}
+	public void setAdmin(boolean isAdmin)
+	{
+		this.isAdmin = isAdmin;
 	}
 	 
 	

@@ -3,8 +3,8 @@ package org.tsn.tos;
 import org.tsn.entity.TProfile;
 import org.tsn.entity.TSecurityQuestions;
 
-public class SecurityAnswer {
-
+public class SecurityAnswer extends BaseTransferObject{
+	private static final long	serialVersionUID	= -2984611330003326183L;
 	private int securityAnswerId;
 	private SecurityQuestion securityQuestion;
 	  

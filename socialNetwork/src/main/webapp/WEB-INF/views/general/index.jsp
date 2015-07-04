@@ -8,6 +8,9 @@
 <head>
   <title>NGO</title>
   <meta charset="utf-8">
+  
+  
+  
 <link href="<c:url value="/css/style.css" />" type="text/css"	rel="stylesheet" media="all"/>
 <link href="<c:url value="/css/reset.css" />" type="text/css"rel="stylesheet" media="all"/>
   
@@ -21,9 +24,10 @@
     <script type="text/javascript" src="js/IE9.js"></script>
   <![endif]-->
   
+  <script type="text/javascript" language="Javascript" src="<c:url value="/js/tsn-common.js" />"></script>
     
 </head>
-<body>
+<body >
  <jsp:include page="../common/header.jsp"></jsp:include>
  
 

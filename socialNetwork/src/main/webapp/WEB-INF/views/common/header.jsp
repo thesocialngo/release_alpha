@@ -33,8 +33,8 @@
         </div>
         <div class="login_link">
 <c:choose>
-<c:when test="${empty userprofile }"><a href="#">LOGIN</a> | <a href="/socialNetwork/user/SignUp">SIGN UP</a></c:when>
-<c:otherwise><a href="/socialNetwork/user/logout">LOGOUT</a> </c:otherwise>
+<c:when test="${not empty userprofile && userprofile.validProfile }"><a href="/socialNetwork/user/logout">LOGOUT</a> | <a href="/socialNetwork/user/updateProfile">Update Profile</a></c:when>
+<c:otherwise><a href="/socialNetwork/user/SignUp?login=true">LOGIN</a> | <a href="/socialNetwork/user/SignUp">SIGN UP</a> </c:otherwise>
 </c:choose>
  
  

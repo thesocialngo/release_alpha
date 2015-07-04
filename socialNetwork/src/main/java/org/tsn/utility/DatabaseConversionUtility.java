@@ -1,8 +1,7 @@
 package org.tsn.utility;
 
-import org.tsn.entity.TEducation;
+import org.apache.commons.lang3.StringUtils;
 import org.tsn.entity.TLogin;
-import org.tsn.entity.TOccupation;
 import org.tsn.entity.TProfile;
 import org.tsn.tos.UserProfile;
 
@@ -11,7 +10,7 @@ public class DatabaseConversionUtility extends BaseUtility {
 	private DatabaseConversionUtility() {
 		super();
 	}
-	public TProfile getUserProfile(UserProfile userProfile) {
+	public TProfile geTProfile(UserProfile userProfile) {
 
 		if(null == userProfile)
 			return null;
@@ -47,7 +46,7 @@ public class DatabaseConversionUtility extends BaseUtility {
 		//profileEntity.setTOccupation(new TOccupation());
 		//profileEntity.setTSecurityAnswerses( new TSecurityAnswer);
 	}
-	public TProfile getUserProfile(UserProfile userProfile, TProfile profile)
+	public TProfile getTProfile(UserProfile userProfile, TProfile profile)
 	{
 		if(null == profile)
 			return null;
@@ -55,5 +54,54 @@ public class DatabaseConversionUtility extends BaseUtility {
 		updateTprofile(userProfile, profile);
 		
 		return profile;
+	}
+	
+	public UserProfile getUserProfile( TProfile profile)
+	{
+		if(null == profile)
+			return null;
+
+		UserProfile userProfile = new UserProfile();
+		
+		//userProfile.set profile.getLoginId();
+		if(null != profile.getTEducation())
+		{	
+			userProfile.setEducationID( profile.getTEducation().getEducationId());
+		}
+		//userProfile.set profile.getTLogin();
+		if(null != profile.getTOccupation())
+		{
+			userProfile.setOccupationID( profile.getTOccupation().getOccupationId());
+		}
+		userProfile.setFirstName( profile.getFirstName());
+		userProfile.setLastName( profile.getLastName());
+		userProfile.setGender( profile.getGender());
+		userProfile.setDateOfBirth( profile.getDob());
+		userProfile.setEmail( profile.getEmailId());
+		userProfile.setPhoneNumber( profile.getPhoneNumber());
+		//userProfile.setp profile.getProfileDescr();
+//		userProfile.set profile.getProfilePhoto();
+		userProfile.setFacebookID( profile.getFacebookId());
+		userProfile.setTweeeterID( profile.getTweeterId());
+		userProfile.setGoogleID( profile.getGoogleId());
+		//userProfile.sete profile.getEducationDescr();
+		//userProfile.seto profile.getOccupationDescr();
+		userProfile.setAdmin(toBoolean( profile.getIsAdmin()));
+
+
+
+		
+		
+		return userProfile;
+	}
+	
+	public boolean validateUserAunthentication(UserProfile profile1, TProfile profile2)
+	{
+		if(null ==profile1 || null == profile2 || null == profile1.getPassword() || null == profile2.getTLogin())
+			return false;
+		  
+		String dbPassword = profile2.getTLogin().getPassword();
+		String password = profile1.getPassword();
+		return  StringUtils.equals(dbPassword, password);
 	}
 }

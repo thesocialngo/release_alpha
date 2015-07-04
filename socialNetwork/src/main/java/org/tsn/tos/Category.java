@@ -1,7 +1,8 @@
 package org.tsn.tos;
 
-public class Category {
+public class Category extends BaseTransferObject{
 
+	private static final long	serialVersionUID	= -1362056495775611270L;
 		private int id;
 		private String description;
 

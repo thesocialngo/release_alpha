@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.tsn.dao.interfaces.IUserProfileDAO;
@@ -12,6 +16,7 @@ import org.tsn.entity.TProfile;
 import org.tsn.entity.TSecurityQuestions;
 import org.tsn.tos.UserProfile;
 import org.tsn.utility.DatabaseConversionUtility;
+import org.tsn.utility.JavaUtility;
 import org.tsn.utility.MasterDataConversionUtility;
 import org.tsn.utility.UserProfileConversionUtility;
 
@@ -26,11 +31,24 @@ public class UserProfileDAOImpl implements IUserProfileDAO{
 	@Transactional
 	public UserProfile getUserProfile(UserProfile profile) {
 
-		List<TSecurityQuestions>  securityQuestions = 
-				this.sessionFactory.getCurrentSession().createQuery("from TSecurityQuestions").list();
-		UserProfileConversionUtility.shared.updateSecurityQuestions(profile,securityQuestions);
-		//return MasterDataConversionUtility.shared.getMasterRecords(securityQuestions,occupations,educations,causes,categories );
-		logger.info("security questions added to profile :"+securityQuestions);
+ 		
+		logger.info("fetching from database ..");
+		
+		TProfile tProfile  = getProfile (profile.getEmail());// (TProfile) template.load(TProfile.class, userProfile.getId());
+		
+		
+		
+		/*Criteria criteria = this.sessionFactory.getCurrentSession().createCriteria(UserProfile.class);  
+		criteria.add( Restrictions.eqProperty("email",  profile.getEmail()) );*/
+ 				  
+		if( DatabaseConversionUtility.shared.validateUserAunthentication( profile,tProfile))
+		{
+			profile = DatabaseConversionUtility.shared.getUserProfile(tProfile);
+			profile.setValidProfile(true);
+		    return profile;
+		}
+				  
+		
 		return profile;
 	}
 
@@ -39,7 +57,7 @@ public class UserProfileDAOImpl implements IUserProfileDAO{
 	public void addUserProfile(UserProfile userProfile) {
 
 		try {
-			TProfile profile =   DatabaseConversionUtility.shared.getUserProfile(userProfile);
+			TProfile profile =   DatabaseConversionUtility.shared.geTProfile(userProfile);
 			 logger.info("persisting profile :"+profile);
 			this.sessionFactory.getCurrentSession().save( 
 					 profile);
@@ -57,7 +75,7 @@ public class UserProfileDAOImpl implements IUserProfileDAO{
 		try {
 			TProfile profile  = getProfile (userProfile.getEmail());// (TProfile) template.load(TProfile.class, userProfile.getId());
 			
-			DatabaseConversionUtility.shared.getUserProfile(userProfile,profile);
+			DatabaseConversionUtility.shared.getTProfile(userProfile,profile);
 			
 			logger.info("persisting profile :"+profile);
 			this.sessionFactory.getCurrentSession().update(profile);  

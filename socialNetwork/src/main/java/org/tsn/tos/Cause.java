@@ -1,7 +1,8 @@
 package org.tsn.tos;
 
-public class Cause {
+public class Cause extends BaseTransferObject {
 
+	private static final long	serialVersionUID	= 2590580806418739000L;
 		private int id;
 		private String description;
 

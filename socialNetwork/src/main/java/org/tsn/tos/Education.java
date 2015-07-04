@@ -1,7 +1,8 @@
 package org.tsn.tos;
 
-public class Education {
+public class Education extends BaseTransferObject{
 
+	private static final long	serialVersionUID	= 2863918022347037482L;
 		private int id;
 		private String description;
 

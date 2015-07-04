@@ -1,9 +1,11 @@
 package org.tsn.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -11,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.tsn.resources.SessionConstants;
 import org.tsn.service.interfaces.IUserProfileManager;
 import org.tsn.tos.UserProfile;
 
@@ -23,8 +26,13 @@ import org.tsn.tos.UserProfile;
 	    private IUserProfileManager profileDataManager;
 	    
 	    @RequestMapping(value = "/", method = RequestMethod.GET)
-	    public String doView(ModelMap map)
+	    public String doView(ModelMap map,HttpServletRequest request)
 	    { 
+	    	HttpSession session =  request.getSession(false);
+	    	UserProfile profile = null;
+	    	if(null!=session)
+	    	 profile = (UserProfile) session.getAttribute( SessionConstants.USER_PROFILE);
+	    	
 	    	return  "general/index";
 	    }
 	    

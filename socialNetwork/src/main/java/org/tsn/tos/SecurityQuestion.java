@@ -1,7 +1,8 @@
 package org.tsn.tos;
 
-public class SecurityQuestion {
+public class SecurityQuestion extends BaseTransferObject{
 
+	private static final long	serialVersionUID	= -5001414889126969043L;
 	private int id;
 	private String description;
 
