@@ -75,15 +75,16 @@
 	          </div>
 	          
 	          
-	           <div class="row" style="color:red">
-	           <c:if test="${ (not empty loginError && loginError)}">Invalid Login.</c:if>
-	           </div>
+	           
 		      <div class="row">
 			  
 
 	          <input class="signin-btn" type="submit"  value="Login" >
 	          	<!-- <input type="button" class="button" value="Create New Account" /> -->
 	          </div>
+	          <div class="row" style="color:red">
+	           <c:if test="${ (not empty loginError && loginError)}">Invalid Login.</c:if>
+	           </div>
 	            
 			 </div>
 			
