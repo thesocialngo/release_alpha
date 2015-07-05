@@ -15,7 +15,7 @@ import org.tsn.resources.TSN_Constants;
 
 public class JavaUtility
 {
-	public static JavaUtility shared = new JavaUtility();
+	public static JavaUtility	shared	= new JavaUtility();
 
 	protected String fomatDate(Date d, String pattern)
 	{
@@ -86,19 +86,23 @@ public class JavaUtility
 
 	public double toDouble(BigDecimal bd)
 	{
-		//null value is not 0.0, so it is TSN_Constants.NOT_APPLICABLE.
+		// null value is not 0.0, so it is TSN_Constants.NOT_APPLICABLE.
 		if (null == bd)
+		{
 			return TSN_Constants.NOT_APPLICABLE;
-		
+		}
+
 		return bd.doubleValue();
 	}
 
 	public double toDouble(Double bd)
 	{
-		//null value is not 0.0, so it is TSN_Constants.NOT_APPLICABLE.
+		// null value is not 0.0, so it is TSN_Constants.NOT_APPLICABLE.
 		if (null == bd)
+		{
 			return TSN_Constants.NOT_APPLICABLE;
-		
+		}
+
 		return bd.doubleValue();
 	}
 
@@ -108,9 +112,9 @@ public class JavaUtility
 		{
 			return null;
 		}
-	
+
 		double[] values = new double[bds.length];
-	
+
 		for (int i = 0; bds != null && i < bds.length; i++)
 		{
 			values[i] = toDouble(bds[i]);
@@ -120,19 +124,23 @@ public class JavaUtility
 
 	public int toInt(Integer b)
 	{
-		//null value is not 0.0, so it is TSN_Constants.NOT_APPLICABLE.
+		// null value is not 0.0, so it is TSN_Constants.NOT_APPLICABLE.
 		if (null == b)
+		{
 			return Integer.MIN_VALUE;
-	
+		}
+
 		return b.intValue();
 	}
 
 	public int toInt(String b)
 	{
-		
+
 		if (null == b)
+		{
 			return Integer.MIN_VALUE;
-		
+		}
+
 		int result = Integer.MIN_VALUE;
 		try
 		{
@@ -147,10 +155,11 @@ public class JavaUtility
 
 	public Date toDateFromTimestamp(String timestamp)
 	{
-		 
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH.mm.ss.SSS", Locale.ENGLISH);
+
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH.mm.ss.SSS",
+			Locale.ENGLISH);
 		Date date = null;
-		 
+
 		try
 		{
 			date = format.parse(timestamp);
@@ -159,7 +168,7 @@ public class JavaUtility
 		{
 			// TODO: handle exception
 		}
-		
+
 		return date;
 	}
 
@@ -190,7 +199,7 @@ public class JavaUtility
 	{
 		return CollectionUtils.isEmpty(c) || c.isEmpty();
 	}
-	
+
 	public boolean isNotEmpty(Collection<?> c)
 	{
 		return !isEmpty(c);
