@@ -1,6 +1,6 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_security_answers", catalog = "tsn_test")
-public class TSecurityAnswers implements java.io.Serializable
+public class TSecurityAnswers implements IBaseEntity
 {
 
 	private int					securityAnswerId;
@@ -33,10 +33,10 @@ public class TSecurityAnswers implements java.io.Serializable
 	}
 
 	public TSecurityAnswers(
-		int securityAnswerId,
-		TLogin TLogin,
-		TSecurityQuestions TSecurityQuestions,
-		String answerDescr)
+			int securityAnswerId,
+			TLogin TLogin,
+			TSecurityQuestions TSecurityQuestions,
+			String answerDescr)
 	{
 		this.securityAnswerId = securityAnswerId;
 		this.TLogin = TLogin;

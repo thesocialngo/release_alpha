@@ -1,14 +1,16 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -20,25 +22,25 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name = "t_login", catalog = "tsn_test", uniqueConstraints = @UniqueConstraint(columnNames = "USER_NAME"))
-public class TLogin implements java.io.Serializable
+public class TLogin implements IBaseEntity
 {
 
 	private Integer					loginId;
 	private String					userName;
 	private String					password;
 	private Set<TProjectMilestones>	TProjectMilestoneses			= new HashSet<TProjectMilestones>(
-																		0);
+			0);
 	private Set<TTeam>				TTeams							= new HashSet<TTeam>(
-																		0);
+			0);
 	private TProfile				TProfile;
 	private Set<TProjects>			TProjectses						= new HashSet<TProjects>(
-																		0);
+			0);
 	private Set<TUserCiircle>		TUserCiirclesForLoginId			= new HashSet<TUserCiircle>(
-																		0);
+			0);
 	private Set<TSecurityAnswers>	TSecurityAnswerses				= new HashSet<TSecurityAnswers>(
-																		0);
+			0);
 	private Set<TUserCiircle>		TUserCiirclesForParentLoginId	= new HashSet<TUserCiircle>(
-																		0);
+			0);
 
 	public TLogin()
 	{
@@ -51,15 +53,15 @@ public class TLogin implements java.io.Serializable
 	}
 
 	public TLogin(
-		String userName,
-		String password,
-		Set<TProjectMilestones> TProjectMilestoneses,
-		Set<TTeam> TTeams,
-		TProfile TProfile,
-		Set<TProjects> TProjectses,
-		Set<TUserCiircle> TUserCiirclesForLoginId,
-		Set<TSecurityAnswers> TSecurityAnswerses,
-		Set<TUserCiircle> TUserCiirclesForParentLoginId)
+			String userName,
+			String password,
+			Set<TProjectMilestones> TProjectMilestoneses,
+			Set<TTeam> TTeams,
+			TProfile TProfile,
+			Set<TProjects> TProjectses,
+			Set<TUserCiircle> TUserCiirclesForLoginId,
+			Set<TSecurityAnswers> TSecurityAnswerses,
+			Set<TUserCiircle> TUserCiirclesForParentLoginId)
 	{
 		this.userName = userName;
 		this.password = password;

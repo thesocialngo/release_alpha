@@ -1,40 +1,39 @@
 package org.tsn.tos;
 
-public class MasterRecords {
+public class MasterRecords
+{
 
-	private SecurityQuestion[] securityQuestions;
-	private Cause[] causes;
-	private Category[] categories;
-	private Occupation[] occupations;
-	private Education[] educations;
+	private SecurityQuestion[]	securityQuestions;
+	private ProjectType[]		projectTypes;
+	private Category[]			categories;
+	private Occupation[]		occupations;
+	private Education[]			educations;
 
-	public SecurityQuestion[] getSecurityQuestions() {
+	public SecurityQuestion[] getSecurityQuestions()
+	{
 		return securityQuestions;
 	}
 
-	public void setSecurityQuestions(SecurityQuestion[] securityQuestions) {
+	public void setSecurityQuestions(SecurityQuestion[] securityQuestions)
+	{
 		this.securityQuestions = securityQuestions;
 	}
 
-	/**
-	 * @return the causes
-	 */
-	public Cause[] getCauses() {
-		return causes;
+	public ProjectType[] getProjectTypes()
+	{
+		return projectTypes;
 	}
 
-	/**
-	 * @param causes
-	 *            the causes to set
-	 */
-	public void setCauses(Cause[] causes) {
-		this.causes = causes;
+	public void setProjectTypes(ProjectType[] projectTypes)
+	{
+		this.projectTypes = projectTypes;
 	}
 
 	/**
 	 * @return the categories
 	 */
-	public Category[] getCategories() {
+	public Category[] getCategories()
+	{
 		return categories;
 	}
 
@@ -42,14 +41,16 @@ public class MasterRecords {
 	 * @param categories
 	 *            the categories to set
 	 */
-	public void setCategories(Category[] categories) {
+	public void setCategories(Category[] categories)
+	{
 		this.categories = categories;
 	}
 
 	/**
 	 * @return the occupations
 	 */
-	public Occupation[] getOccupations() {
+	public Occupation[] getOccupations()
+	{
 		return occupations;
 	}
 
@@ -57,14 +58,16 @@ public class MasterRecords {
 	 * @param occupations
 	 *            the occupations to set
 	 */
-	public void setOccupations(Occupation[] occupations) {
+	public void setOccupations(Occupation[] occupations)
+	{
 		this.occupations = occupations;
 	}
 
 	/**
 	 * @return the educations
 	 */
-	public Education[] getEducations() {
+	public Education[] getEducations()
+	{
 		return educations;
 	}
 
@@ -72,7 +75,8 @@ public class MasterRecords {
 	 * @param educations
 	 *            the educations to set
 	 */
-	public void setEducations(Education[] educations) {
+	public void setEducations(Education[] educations)
+	{
 		this.educations = educations;
 	}
 

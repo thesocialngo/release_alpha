@@ -1,6 +1,6 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_user_ciircle", catalog = "tsn_test")
-public class TUserCiircle implements java.io.Serializable
+public class TUserCiircle implements IBaseEntity
 {
 
 	private int		circleId;
@@ -32,9 +32,9 @@ public class TUserCiircle implements java.io.Serializable
 	}
 
 	public TUserCiircle(
-		int circleId,
-		TLogin TLoginByLoginId,
-		TLogin TLoginByParentLoginId)
+			int circleId,
+			TLogin TLoginByLoginId,
+			TLogin TLoginByParentLoginId)
 	{
 		this.circleId = circleId;
 		this.TLoginByLoginId = TLoginByLoginId;

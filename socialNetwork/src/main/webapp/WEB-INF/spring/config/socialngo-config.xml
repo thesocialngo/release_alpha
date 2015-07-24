@@ -71,8 +71,8 @@
 				<!-- <beans:value>org.tsn.entity.TAddressHome</beans:value> -->
 				<beans:value>org.tsn.entity.TCategories</beans:value>
 				<!-- <beans:value>org.tsn.entity.TCategoriesHome</beans:value> -->
-				<beans:value>org.tsn.entity.TCauses</beans:value>
-				<!-- <beans:value>org.tsn.entity.TCausesHome</beans:value> -->
+				<beans:value>org.tsn.entity.TProjectType</beans:value>
+				<!-- <beans:value>org.tsn.entity.TProjectTypeHome</beans:value> -->
 				<beans:value>org.tsn.entity.TEducation</beans:value>
 				<!-- <beans:value>org.tsn.entity.TEducationHome</beans:value> -->
 				<beans:value>org.tsn.entity.TLogin</beans:value>

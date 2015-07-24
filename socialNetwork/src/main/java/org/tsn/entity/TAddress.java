@@ -1,9 +1,10 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,14 +39,14 @@ public class TAddress implements IBaseEntity
 	}
 
 	public TAddress(
-		int addressId,
-		String addressLine1,
-		String addressLine2,
-		String city,
-		String state,
-		String country,
-		String zipCode,
-		Set<TProjects> TProjectses)
+			int addressId,
+			String addressLine1,
+			String addressLine2,
+			String city,
+			String state,
+			String country,
+			String zipCode,
+			Set<TProjects> TProjectses)
 	{
 		this.addressId = addressId;
 		this.addressLine1 = addressLine1;

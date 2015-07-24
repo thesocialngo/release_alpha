@@ -1,14 +1,16 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,7 +26,7 @@ public class TSecurityQuestions implements IBaseEntity
 	private Integer					questionId;
 	private String					questionText;
 	private Set<TSecurityAnswers>	TSecurityAnswerses	= new HashSet<TSecurityAnswers>(
-															0);
+			0);
 
 	public TSecurityQuestions()
 	{
@@ -36,8 +38,8 @@ public class TSecurityQuestions implements IBaseEntity
 	}
 
 	public TSecurityQuestions(
-		String questionText,
-		Set<TSecurityAnswers> TSecurityAnswerses)
+			String questionText,
+			Set<TSecurityAnswers> TSecurityAnswerses)
 	{
 		this.questionText = questionText;
 		this.TSecurityAnswerses = TSecurityAnswerses;

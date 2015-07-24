@@ -1,8 +1,9 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,6 +16,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
@@ -23,7 +25,7 @@ import org.hibernate.annotations.Parameter;
  */
 @Entity
 @Table(name = "t_profile", catalog = "tsn_test")
-public class TProfile implements java.io.Serializable
+public class TProfile implements IBaseEntity
 {
 
 	private Integer		loginId;
@@ -55,23 +57,23 @@ public class TProfile implements java.io.Serializable
 	}
 
 	public TProfile(
-		TEducation TEducation,
-		TLogin TLogin,
-		TOccupation TOccupation,
-		String firstName,
-		String lastName,
-		Character gender,
-		Date dob,
-		String emailId,
-		String phoneNumber,
-		String profileDescr,
-		byte[] profilePhoto,
-		String facebookId,
-		String tweeterId,
-		String googleId,
-		String educationDescr,
-		String occupationDescr,
-		Character isAdmin)
+			TEducation TEducation,
+			TLogin TLogin,
+			TOccupation TOccupation,
+			String firstName,
+			String lastName,
+			Character gender,
+			Date dob,
+			String emailId,
+			String phoneNumber,
+			String profileDescr,
+			byte[] profilePhoto,
+			String facebookId,
+			String tweeterId,
+			String googleId,
+			String educationDescr,
+			String occupationDescr,
+			Character isAdmin)
 	{
 		this.TEducation = TEducation;
 		this.TLogin = TLogin;

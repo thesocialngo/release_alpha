@@ -1,8 +1,9 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +19,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "t_project_feeds", catalog = "tsn_test")
-public class TProjectFeeds implements java.io.Serializable
+public class TProjectFeeds implements IBaseEntity
 {
 
 	private int			feedId;
@@ -37,11 +38,11 @@ public class TProjectFeeds implements java.io.Serializable
 	}
 
 	public TProjectFeeds(
-		int feedId,
-		TProjects TProjects,
-		String descr,
-		byte[] isPrivate,
-		Date commentDate)
+			int feedId,
+			TProjects TProjects,
+			String descr,
+			byte[] isPrivate,
+			Date commentDate)
 	{
 		this.feedId = feedId;
 		this.TProjects = TProjects;

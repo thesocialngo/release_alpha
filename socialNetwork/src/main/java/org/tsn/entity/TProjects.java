@@ -1,10 +1,11 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,14 +22,14 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "t_projects", catalog = "tsn_test")
-public class TProjects implements java.io.Serializable
+public class TProjects implements IBaseEntity
 {
 
 	private int						projectId;
 	private TAddress				TAddress;
 	private TCategories				TCategories;
-	private TCauses					TCauses;
 	private TLogin					TLogin;
+	private TProjectType			TProjectType;
 	private String					title;
 	private byte[]					projectPic;
 	private String					projectDescr;
@@ -43,11 +44,11 @@ public class TProjects implements java.io.Serializable
 	private Date					targetCompletionDate;
 	private Date					actualCompletionDate;
 	private Set<TTeam>				TTeams					= new HashSet<TTeam>(
-																0);
+			0);
 	private Set<TProjectFeeds>		TProjectFeedses			= new HashSet<TProjectFeeds>(
-																0);
+			0);
 	private Set<TProjectMilestones>	TProjectMilestoneses	= new HashSet<TProjectMilestones>(
-																0);
+			0);
 
 	public TProjects()
 	{
@@ -59,33 +60,33 @@ public class TProjects implements java.io.Serializable
 	}
 
 	public TProjects(
-		int projectId,
-		TAddress TAddress,
-		TCategories TCategories,
-		TCauses TCauses,
-		TLogin TLogin,
-		String title,
-		byte[] projectPic,
-		String projectDescr,
-		Double totalCost,
-		Integer totalVolunteerCount,
-		String facebookId,
-		String tweeterId,
-		String googleId,
-		Double fundsReceived,
-		Integer voluntersNeeded,
-		Date startDate,
-		Date targetCompletionDate,
-		Date actualCompletionDate,
-		Set<TTeam> TTeams,
-		Set<TProjectFeeds> TProjectFeedses,
-		Set<TProjectMilestones> TProjectMilestoneses)
+			int projectId,
+			TAddress TAddress,
+			TCategories TCategories,
+			TLogin TLogin,
+			TProjectType TProjectType,
+			String title,
+			byte[] projectPic,
+			String projectDescr,
+			Double totalCost,
+			Integer totalVolunteerCount,
+			String facebookId,
+			String tweeterId,
+			String googleId,
+			Double fundsReceived,
+			Integer voluntersNeeded,
+			Date startDate,
+			Date targetCompletionDate,
+			Date actualCompletionDate,
+			Set<TTeam> TTeams,
+			Set<TProjectFeeds> TProjectFeedses,
+			Set<TProjectMilestones> TProjectMilestoneses)
 	{
 		this.projectId = projectId;
 		this.TAddress = TAddress;
 		this.TCategories = TCategories;
-		this.TCauses = TCauses;
 		this.TLogin = TLogin;
+		this.TProjectType = TProjectType;
 		this.title = title;
 		this.projectPic = projectPic;
 		this.projectDescr = projectDescr;
@@ -141,18 +142,6 @@ public class TProjects implements java.io.Serializable
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CAUSE_ID")
-	public TCauses getTCauses()
-	{
-		return this.TCauses;
-	}
-
-	public void setTCauses(TCauses TCauses)
-	{
-		this.TCauses = TCauses;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "LEADER_LOGIN_ID")
 	public TLogin getTLogin()
 	{
@@ -162,6 +151,18 @@ public class TProjects implements java.io.Serializable
 	public void setTLogin(TLogin TLogin)
 	{
 		this.TLogin = TLogin;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "CAUSE_ID")
+	public TProjectType getTProjectType()
+	{
+		return this.TProjectType;
+	}
+
+	public void setTProjectType(TProjectType TProjectType)
+	{
+		this.TProjectType = TProjectType;
 	}
 
 	@Column(name = "TITLE", length = 40)

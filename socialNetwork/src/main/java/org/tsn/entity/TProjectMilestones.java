@@ -1,10 +1,11 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +22,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "t_project_milestones", catalog = "tsn_test")
-public class TProjectMilestones implements java.io.Serializable
+public class TProjectMilestones implements IBaseEntity
 {
 
 	private int						projectMilestoneId;
@@ -34,7 +35,7 @@ public class TProjectMilestones implements java.io.Serializable
 	private Date					targetCompletionDate;
 	private Date					actualCompletionDate;
 	private Set<TProjectGallery>	TProjectGalleries	= new HashSet<TProjectGallery>(
-															0);
+			0);
 
 	public TProjectMilestones()
 	{
@@ -46,16 +47,16 @@ public class TProjectMilestones implements java.io.Serializable
 	}
 
 	public TProjectMilestones(
-		int projectMilestoneId,
-		TLogin TLogin,
-		TProjects TProjects,
-		Integer descr,
-		Double fundsRequired,
-		Double fundsReceived,
-		Date iniationDate,
-		Date targetCompletionDate,
-		Date actualCompletionDate,
-		Set<TProjectGallery> TProjectGalleries)
+			int projectMilestoneId,
+			TLogin TLogin,
+			TProjects TProjects,
+			Integer descr,
+			Double fundsRequired,
+			Double fundsReceived,
+			Date iniationDate,
+			Date targetCompletionDate,
+			Date actualCompletionDate,
+			Set<TProjectGallery> TProjectGalleries)
 	{
 		this.projectMilestoneId = projectMilestoneId;
 		this.TLogin = TLogin;

@@ -1,8 +1,9 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +19,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "t_project_gallery", catalog = "tsn_test")
-public class TProjectGallery implements java.io.Serializable
+public class TProjectGallery implements IBaseEntity
 {
 
 	private int					galleryId;
@@ -37,11 +38,11 @@ public class TProjectGallery implements java.io.Serializable
 	}
 
 	public TProjectGallery(
-		int galleryId,
-		TProjectMilestones TProjectMilestones,
-		byte[] picture,
-		byte[] video,
-		Date expiryDate)
+			int galleryId,
+			TProjectMilestones TProjectMilestones,
+			byte[] picture,
+			byte[] video,
+			Date expiryDate)
 	{
 		this.galleryId = galleryId;
 		this.TProjectMilestones = TProjectMilestones;

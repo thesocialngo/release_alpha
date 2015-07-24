@@ -59,16 +59,16 @@
 	</table>
 
 	<!-----------4-Causes --------------->
-	<h3>Causes .</h3>
+	<h3>Project Types .</h3>
 	<form:form method="get" action="add">
-		<input type="hidden" name="tableName" value="CAUSES" />
+		<input type="hidden" name="tableName" value="PROJECTTYPES" />
 		<input type="text" name="textValue" />
-		<input type="submit" value="<spring:message code="label.cause.add"/>" />
+		<input type="submit" value="<spring:message code="label.projectType.add"/>" />
 	</form:form>
 	<table class="data">
-		<c:forEach items="${masterRecords.causes}" var="entity">
+		<c:forEach items="${masterRecords.projectTypes}" var="entity">
 			<tr>
-			<td><a href="delete/CAUSES/${entity.id}">delete</a></td>	<td>${entity.description}</td>
+			<td><a href="delete/PROJECTTYPES/${entity.id}">delete</a></td>	<td>${entity.description}</td>
 			</tr>
 		</c:forEach>
 	</table>

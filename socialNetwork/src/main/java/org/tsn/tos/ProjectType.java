@@ -1,17 +1,17 @@
 package org.tsn.tos;
 
-public class Cause extends BaseTransferObject {
+public class ProjectType extends BaseTransferObject {
 
 	private static final long	serialVersionUID	= 2590580806418739000L;
 		private int id;
 		private String description;
 
-		public Cause(int causeID, String desc) {
+		public ProjectType(int projectTypeID, String desc) {
 
-			this.id = causeID;
+			this.id = projectTypeID;
 			this.description = desc;
 		}
-		public Cause(String desc) {
+		public ProjectType(String desc) {
 
 			this.description = desc;
 		}

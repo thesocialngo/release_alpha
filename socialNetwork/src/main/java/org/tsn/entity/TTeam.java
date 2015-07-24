@@ -1,6 +1,6 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_team", catalog = "tsn_test")
-public class TTeam implements java.io.Serializable
+public class TTeam implements IBaseEntity
 {
 
 	private int			teamId;

@@ -1,6 +1,6 @@
 package org.tsn.entity;
 
-// Generated Apr 23, 2015 9:21:54 PM by Hibernate Tools 4.3.1
+// Generated Jul 23, 2015 8:29:33 PM by Hibernate Tools 4.3.1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,22 +9,22 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * Home object for domain model class TCauses.
- * @see org.tsn.entity.TCauses
+ * Home object for domain model class TProjectType.
+ * @see org.tsn.entity.TProjectType
  * @author Hibernate Tools
  */
 @Stateless
-public class TCausesHome
+public class TProjectTypeHome
 {
 
-	private static final Log	log	= LogFactory.getLog(TCausesHome.class);
+	private static final Log	log	= LogFactory.getLog(TProjectTypeHome.class);
 
 	@PersistenceContext
 	private EntityManager		entityManager;
 
-	public void persist(TCauses transientInstance)
+	public void persist(TProjectType transientInstance)
 	{
-		log.debug("persisting TCauses instance");
+		log.debug("persisting TProjectType instance");
 		try
 		{
 			entityManager.persist(transientInstance);
@@ -37,9 +37,9 @@ public class TCausesHome
 		}
 	}
 
-	public void remove(TCauses persistentInstance)
+	public void remove(TProjectType persistentInstance)
 	{
-		log.debug("removing TCauses instance");
+		log.debug("removing TProjectType instance");
 		try
 		{
 			entityManager.remove(persistentInstance);
@@ -52,12 +52,12 @@ public class TCausesHome
 		}
 	}
 
-	public TCauses merge(TCauses detachedInstance)
+	public TProjectType merge(TProjectType detachedInstance)
 	{
-		log.debug("merging TCauses instance");
+		log.debug("merging TProjectType instance");
 		try
 		{
-			TCauses result = entityManager.merge(detachedInstance);
+			TProjectType result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		}
@@ -68,12 +68,12 @@ public class TCausesHome
 		}
 	}
 
-	public TCauses findById(Integer id)
+	public TProjectType findById(int id)
 	{
-		log.debug("getting TCauses instance with id: " + id);
+		log.debug("getting TProjectType instance with id: " + id);
 		try
 		{
-			TCauses instance = entityManager.find(TCauses.class, id);
+			TProjectType instance = entityManager.find(TProjectType.class, id);
 			log.debug("get successful");
 			return instance;
 		}
