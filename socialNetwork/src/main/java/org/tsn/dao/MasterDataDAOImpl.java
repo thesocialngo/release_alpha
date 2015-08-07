@@ -15,6 +15,7 @@ import org.tsn.entity.TProjectType;
 import org.tsn.entity.TSecurityQuestions;
 import org.tsn.resources.TSN_Constants;
 import org.tsn.tos.MasterRecords;
+import org.tsn.tos.ProjectType;
 import org.tsn.utility.MasterDataConversionUtility;
 
 public class MasterDataDAOImpl implements IMasterDataDAO
@@ -137,6 +138,26 @@ public class MasterDataDAOImpl implements IMasterDataDAO
 			logger.info("deleting.........xxxxxx....." + entity);
 			this.sessionFactory.getCurrentSession().delete(entity);
 		}
+	}
+
+	@Override
+	public ProjectType getProjectTypeById(int id)
+	{
+		TProjectType instance = (TProjectType) this.sessionFactory.getCurrentSession()
+				.get(TProjectType.class, id);
+
+		return MasterDataConversionUtility.shared.getProjectType(instance);
+	}
+
+	@Transactional
+	@Override
+	public ProjectType[] getProjectTypes()
+	{
+		List<TProjectType> projectTypes = this.sessionFactory.getCurrentSession()
+				.createQuery("from TProjectType")
+				.list();
+
+		return MasterDataConversionUtility.shared.getProjectTypes(projectTypes);
 	}
 
 }

@@ -67,7 +67,7 @@
             	<li><a href="/socialNetwork/" class="active">HOME</a></li>  
                 <li><a href="/socialNetwork/explore">Explore</a></li>           
                 <li><a href="/socialNetwork/howItWorks">How it works</a></li>               
-                <li><a href="/socialNetwork/StartYourMovement">Start your movement</a></li>
+                <li><a href="/socialNetwork/movement/startYourMovement">Start your movement</a></li>
             </ul>
             
         </div>

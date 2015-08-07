@@ -15,7 +15,7 @@ import org.tsn.tos.Occupation;
 import org.tsn.tos.ProjectType;
 import org.tsn.tos.SecurityQuestion;
 
-public class MasterDataConversionUtility
+public class MasterDataConversionUtility extends JavaUtility
 {
 
 	final static Logger							logger	= Logger.getLogger(MasterDataConversionUtility.class);
@@ -44,7 +44,7 @@ public class MasterDataConversionUtility
 
 		Occupation[] occupationArray = new Occupation[occupations.size()];
 		Education[] educationArray = new Education[educations.size()];
-		ProjectType[] ProjectTypeArray = new ProjectType[projectTypes.size()];
+
 		Category[] categoryArray = new Category[categories.size()];
 
 		SecurityQuestion[] questions = new SecurityQuestion[securityQuestions.size()];
@@ -68,11 +68,6 @@ public class MasterDataConversionUtility
 					.getEducationId(), educations.get(i).getEducationText());
 		}
 
-		for (int i = 0; i < projectTypes.size(); i++)
-		{
-			ProjectTypeArray[i] = new ProjectType(projectTypes.get(i)
-					.getProjectTypeId(), projectTypes.get(i).getTypeDescr());
-		}
 		for (int i = 0; i < categories.size(); i++)
 		{
 			categoryArray[i] = new Category(categories.get(i).getCategoryId(),
@@ -80,10 +75,31 @@ public class MasterDataConversionUtility
 		}
 
 		result.setCategories(categoryArray);;
-		result.setProjectTypes(ProjectTypeArray);
+		result.setProjectTypes(getProjectTypes(projectTypes));
 		result.setEducations(educationArray);
 		result.setOccupations(occupationArray);
 		result.setSecurityQuestions(questions);
+		return result;
+	}
+
+	public ProjectType[] getProjectTypes(List<TProjectType> projectTypes)
+	{
+		// MasterDataConversionUtility.shared.getProjectType(instance);
+
+		ProjectType[] ProjectTypeArray = new ProjectType[projectTypes.size()];
+		for (int i = 0; i < projectTypes.size(); i++)
+		{
+			ProjectTypeArray[i] = getProjectType(projectTypes.get(i));
+
+		}
+		return ProjectTypeArray;
+
+	}
+
+	public ProjectType getProjectType(TProjectType projectType)
+	{
+		ProjectType result = new ProjectType(
+				toInt(projectType.getProjectTypeId()), projectType.getTypeDescr());
 		return result;
 	}
 

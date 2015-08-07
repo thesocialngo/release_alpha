@@ -118,7 +118,9 @@
 	<beans:bean id="profileDAO" class="org.tsn.dao.UserProfileDAOImpl"></beans:bean>
 	<beans:bean id="profileDataManager" class="org.tsn.service.UserProfileManagerImpl"></beans:bean>
 	 
-
+	<beans:bean id="fProjectDAO" class="org.tsn.dao.ProjectDAOImpl"></beans:bean>
+	<beans:bean id="fMovement" class="org.tsn.service.ProjectMovementManager"></beans:bean>
+	
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<beans:bean id="transactionManager"

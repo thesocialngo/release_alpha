@@ -157,7 +157,7 @@ if (!org.tsn.common.AccountCommon)
 		 
 		return my;
 	}();
-	AccountCommon = com.trp.rws.account.common.AccountCommon;
+	AccountCommon = org.tsn.common.AccountCommon;
 };
 
   
