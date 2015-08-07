@@ -81,8 +81,9 @@ public class ProjectMovementController extends BaseController
 		System.out.println(movement);
 
 		// Mark Session Complete
-		status.setComplete();
-		return "/";
+		// status.setComplete();
+		// return "/";
+		return "general/Start-your-movement";
 	}
 
 	@ModelAttribute("projectTypes")
