@@ -111,7 +111,7 @@ public class DatabaseConversionUtility extends BaseUtility
 			TProfile profile2)
 	{
 		if (null == profile1 || null == profile2
-			|| null == profile1.getPassword() || null == profile2.getTLogin())
+				|| null == profile1.getPassword() || null == profile2.getTLogin())
 		{
 			return false;
 		}
@@ -130,7 +130,7 @@ public class DatabaseConversionUtility extends BaseUtility
 		TProjects result = new TProjects();
 
 		result.setTProjectType(getTProjectType(movement.getProjectType()));
-
+		
 		return result;
 	}
 

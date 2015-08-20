@@ -54,7 +54,7 @@ public class ProjectMovementController extends BaseController
 			@ModelAttribute("movement") ProjectMovement movement,
 			BindingResult result,
 			SessionStatus status)
-			/*(Model model,@Valid ProjectType projectType)*/
+	/*(Model model,@Valid ProjectType projectType)*/
 	{
 		// status.setComplete();
 		/*Set<ConstraintViolation<ProjectType>> violations = validator.validate(employeeVO);

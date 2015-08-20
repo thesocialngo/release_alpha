@@ -1,7 +1,6 @@
 package org.tsn.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.tsn.resources.SessionConstants;
 import org.tsn.service.interfaces.IUserProfileManager;
-import org.tsn.tos.UserProfile;
 
 @Controller
 @RequestMapping("/")
@@ -25,12 +22,13 @@ public class TSNController extends BaseController
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String doView(ModelMap map, HttpServletRequest request)
 	{
-		HttpSession session = request.getSession(false);
+		/*HttpSession session = request.getSession(false);
 		UserProfile profile = null;
 		if (null != session)
 		{
 			profile = (UserProfile) session.getAttribute(SessionConstants.USER_PROFILE);
-		}
+		}*/
+		// profile =getUserProfile
 
 		return "general/index";
 	}
@@ -52,7 +50,7 @@ public class TSNController extends BaseController
 	/*  @RequestMapping(value = "/StartYourMovement", method = RequestMethod.GET)
 	  public String doStartYourMovement(ModelMap map)
 	  {
-	  	 
+
 	  	return  "general/Start-your-movement";
 	  }*/
 	@RequestMapping(value = "/TermAndConditions", method = RequestMethod.GET)
