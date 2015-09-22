@@ -22,6 +22,14 @@ public class BaseController
 		return profile;
 	}
 
+	protected void updateProfile(
+			HttpServletRequest request,
+			UserProfile sessionProfileData)
+	{
+		HttpSession session = request.getSession(false);
+		session.setAttribute(SessionConstants.USER_PROFILE, sessionProfileData);
+	}
+
 	protected void logError(String message, Throwable t)
 	{
 		logger.error(message, t);

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,12 +17,12 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.support.SessionStatus;
 import org.tsn.coverter.ProjectTypeEditor;
 import org.tsn.service.interfaces.IMasterDataManager;
 import org.tsn.service.interfaces.IProjectMovement;
 import org.tsn.tos.ProjectMovement;
 import org.tsn.tos.ProjectType;
+import org.tsn.tos.UserProfile;
 
 @Controller
 @RequestMapping("movement")
@@ -53,8 +55,8 @@ public class ProjectMovementController extends BaseController
 	public String doUpdateYourMovement(
 			@ModelAttribute("movement") ProjectMovement movement,
 			BindingResult result,
-			SessionStatus status)
-	/*(Model model,@Valid ProjectType projectType)*/
+			HttpServletRequest request)
+			/*(Model model,@Valid ProjectType projectType)*/
 	{
 		// status.setComplete();
 		/*Set<ConstraintViolation<ProjectType>> violations = validator.validate(employeeVO);
@@ -77,7 +79,8 @@ public class ProjectMovementController extends BaseController
 		}
 		// Store the employee information in database
 		// manager.createNewRecord(employeeVO);
-		fMovement.addMovement(movement);
+		UserProfile profile = getUserProfile(request);
+		fMovement.addMovement(movement, profile);
 		System.out.println(movement);
 
 		// Mark Session Complete

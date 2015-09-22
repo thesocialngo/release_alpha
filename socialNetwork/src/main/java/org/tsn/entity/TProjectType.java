@@ -25,7 +25,7 @@ public class TProjectType implements IBaseEntity
 
 	private int				projectTypeId;
 	private String			typeDescr;
-	private Set<TProjects>	TProjectses	= new HashSet<TProjects>(0);
+	private Set<TProject>	TProjectses	= new HashSet<TProject>(0);
 
 	public TProjectType()
 	{
@@ -39,7 +39,7 @@ public class TProjectType implements IBaseEntity
 	public TProjectType(
 		int projectTypeId,
 		String typeDescr,
-		Set<TProjects> TProjectses)
+		Set<TProject> TProjectses)
 	{
 		this.projectTypeId = projectTypeId;
 		this.typeDescr = typeDescr;
@@ -71,12 +71,12 @@ public class TProjectType implements IBaseEntity
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "TProjectType")
-	public Set<TProjects> getTProjectses()
+	public Set<TProject> getTProjectses()
 	{
 		return this.TProjectses;
 	}
 
-	public void setTProjectses(Set<TProjects> TProjectses)
+	public void setTProjectses(Set<TProject> TProjectses)
 	{
 		this.TProjectses = TProjectses;
 	}

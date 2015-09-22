@@ -25,13 +25,13 @@ public class TCategories implements IBaseEntity
 
 	private Integer			categoryId;
 	private String			categoryDescr;
-	private Set<TProjects>	TProjectses	= new HashSet<TProjects>(0);
+	private Set<TProject>	TProjectses	= new HashSet<TProject>(0);
 
 	public TCategories()
 	{
 	}
 
-	public TCategories(String categoryDescr, Set<TProjects> TProjectses)
+	public TCategories(String categoryDescr, Set<TProject> TProjectses)
 	{
 		this.categoryDescr = categoryDescr;
 		this.TProjectses = TProjectses;
@@ -62,12 +62,12 @@ public class TCategories implements IBaseEntity
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "TCategories")
-	public Set<TProjects> getTProjectses()
+	public Set<TProject> getTProjectses()
 	{
 		return this.TProjectses;
 	}
 
-	public void setTProjectses(Set<TProjects> TProjectses)
+	public void setTProjectses(Set<TProject> TProjectses)
 	{
 		this.TProjectses = TProjectses;
 	}

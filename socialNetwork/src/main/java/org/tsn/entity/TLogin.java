@@ -33,7 +33,7 @@ public class TLogin implements IBaseEntity
 	private Set<TTeam>				TTeams							= new HashSet<TTeam>(
 			0);
 	private TProfile				TProfile;
-	private Set<TProjects>			TProjectses						= new HashSet<TProjects>(
+	private Set<TProject>			TProjectses						= new HashSet<TProject>(
 			0);
 	private Set<TUserCiircle>		TUserCiirclesForLoginId			= new HashSet<TUserCiircle>(
 			0);
@@ -58,7 +58,7 @@ public class TLogin implements IBaseEntity
 			Set<TProjectMilestones> TProjectMilestoneses,
 			Set<TTeam> TTeams,
 			TProfile TProfile,
-			Set<TProjects> TProjectses,
+			Set<TProject> TProjectses,
 			Set<TUserCiircle> TUserCiirclesForLoginId,
 			Set<TSecurityAnswers> TSecurityAnswerses,
 			Set<TUserCiircle> TUserCiirclesForParentLoginId)
@@ -144,12 +144,12 @@ public class TLogin implements IBaseEntity
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "TLogin")
-	public Set<TProjects> getTProjectses()
+	public Set<TProject> getTProjectses()
 	{
 		return this.TProjectses;
 	}
 
-	public void setTProjectses(Set<TProjects> TProjectses)
+	public void setTProjectses(Set<TProject> TProjectses)
 	{
 		this.TProjectses = TProjectses;
 	}

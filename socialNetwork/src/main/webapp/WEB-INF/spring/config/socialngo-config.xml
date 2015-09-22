@@ -68,35 +68,20 @@
 		<beans:property name="annotatedClasses">
 			<beans:list>
 				<beans:value>org.tsn.entity.TAddress</beans:value>
-				<!-- <beans:value>org.tsn.entity.TAddressHome</beans:value> -->
 				<beans:value>org.tsn.entity.TCategories</beans:value>
-				<!-- <beans:value>org.tsn.entity.TCategoriesHome</beans:value> -->
 				<beans:value>org.tsn.entity.TProjectType</beans:value>
-				<!-- <beans:value>org.tsn.entity.TProjectTypeHome</beans:value> -->
 				<beans:value>org.tsn.entity.TEducation</beans:value>
-				<!-- <beans:value>org.tsn.entity.TEducationHome</beans:value> -->
 				<beans:value>org.tsn.entity.TLogin</beans:value>
-				<!-- <beans:value>org.tsn.entity.TLoginHome</beans:value> -->
 				<beans:value>org.tsn.entity.TOccupation</beans:value>
-				<!-- <beans:value>org.tsn.entity.TOccupationHome</beans:value> -->
 				<beans:value>org.tsn.entity.TProfile</beans:value>
-				<!-- <beans:value>org.tsn.entity.TProfileHome</beans:value> -->
 				<beans:value>org.tsn.entity.TProjectFeeds</beans:value>
-				<!-- <beans:value>org.tsn.entity.TProjectFeedsHome</beans:value> -->
 				<beans:value>org.tsn.entity.TProjectGallery</beans:value>
-				<!-- <beans:value>org.tsn.entity.TProjectGalleryHome</beans:value> -->
 				<beans:value>org.tsn.entity.TProjectMilestones</beans:value>
-<!-- 				<beans:value>org.tsn.entity.TProjectMilestonesHome</beans:value> -->
-				<beans:value>org.tsn.entity.TProjects</beans:value>
-<!-- 				<beans:value>org.tsn.entity.TProjectsHome</beans:value> -->
+				<beans:value>org.tsn.entity.TProject</beans:value>
 				<beans:value>org.tsn.entity.TSecurityAnswers</beans:value>
-				<!-- <beans:value>org.tsn.entity.TSecurityAnswersHome</beans:value> -->
 				<beans:value>org.tsn.entity.TSecurityQuestions</beans:value>
-				<!-- <beans:value>org.tsn.entity.TSecurityQuestionsHome</beans:value> -->
 				<beans:value>org.tsn.entity.TTeam</beans:value>
-				<!-- <beans:value>org.tsn.entity.TTeamHome</beans:value> -->
 				<beans:value>org.tsn.entity.TUserCiircle</beans:value>
-				<!-- <beans:value>org.tsn.entity.TUserCiircleHome</beans:value> -->
 
 
 			</beans:list>

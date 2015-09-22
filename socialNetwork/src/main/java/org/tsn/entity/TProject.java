@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "t_projects", catalog = "tsn_test")
-public class TProjects implements IBaseEntity
+public class TProject implements IBaseEntity
 {
 
 	private int						projectId;
@@ -50,16 +50,16 @@ public class TProjects implements IBaseEntity
 	private Set<TProjectMilestones>	TProjectMilestoneses	= new HashSet<TProjectMilestones>(
 			0);
 
-	public TProjects()
+	public TProject()
 	{
 	}
 
-	public TProjects(int projectId)
+	public TProject(int projectId)
 	{
 		this.projectId = projectId;
 	}
 
-	public TProjects(
+	public TProject(
 			int projectId,
 			TAddress TAddress,
 			TCategories TCategories,

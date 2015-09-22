@@ -157,7 +157,7 @@ public class JavaUtility
 	{
 
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH.mm.ss.SSS",
-			Locale.ENGLISH);
+				Locale.ENGLISH);
 		Date date = null;
 
 		try
@@ -204,4 +204,39 @@ public class JavaUtility
 	{
 		return !isEmpty(c);
 	}
+
+	public String toString(String[] data)
+	{
+		if (isEmpty(data))
+		{
+			return null;
+		}
+
+		StringBuffer sb = new StringBuffer();
+		for (String val : data)
+		{
+			if (null != val)
+			{
+				sb.append(val);
+			}
+		}
+		return sb.toString();
+
+	}
+
+	public boolean isEmpty(String[] data)
+	{
+		if (null == data || data.length == 0)
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean iNotsEmpty(String[] data)
+	{
+		return !isEmpty(data);
+	}
+
 }

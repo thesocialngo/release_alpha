@@ -20,7 +20,7 @@ public class TTeam implements IBaseEntity
 
 	private int			teamId;
 	private TLogin		TLogin;
-	private TProjects	TProjects;
+	private TProject	TProjects;
 
 	public TTeam()
 	{
@@ -31,7 +31,7 @@ public class TTeam implements IBaseEntity
 		this.teamId = teamId;
 	}
 
-	public TTeam(int teamId, TLogin TLogin, TProjects TProjects)
+	public TTeam(int teamId, TLogin TLogin, TProject TProjects)
 	{
 		this.teamId = teamId;
 		this.TLogin = TLogin;
@@ -64,12 +64,12 @@ public class TTeam implements IBaseEntity
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PROJECT_ID")
-	public TProjects getTProjects()
+	public TProject getTProjects()
 	{
 		return this.TProjects;
 	}
 
-	public void setTProjects(TProjects TProjects)
+	public void setTProjects(TProject TProjects)
 	{
 		this.TProjects = TProjects;
 	}

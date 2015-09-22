@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.tsn.entity.TLogin;
 import org.tsn.entity.TProfile;
 import org.tsn.entity.TProjectType;
-import org.tsn.entity.TProjects;
+import org.tsn.entity.TProject;
 import org.tsn.tos.ProjectMovement;
 import org.tsn.tos.ProjectType;
 import org.tsn.tos.UserProfile;
@@ -77,7 +77,7 @@ public class DatabaseConversionUtility extends BaseUtility
 
 		UserProfile userProfile = new UserProfile();
 
-		// userProfile.set profile.getLoginId();
+		userProfile.setLoginID(profile.getLoginId());;
 		if (null != profile.getTEducation())
 		{
 			userProfile.setEducationID(profile.getTEducation().getEducationId());
@@ -111,7 +111,7 @@ public class DatabaseConversionUtility extends BaseUtility
 			TProfile profile2)
 	{
 		if (null == profile1 || null == profile2
-				|| null == profile1.getPassword() || null == profile2.getTLogin())
+			|| null == profile1.getPassword() || null == profile2.getTLogin())
 		{
 			return false;
 		}
@@ -121,16 +121,19 @@ public class DatabaseConversionUtility extends BaseUtility
 		return StringUtils.equals(dbPassword, password);
 	}
 
-	public TProjects geTProject(ProjectMovement movement)
+	public TProject geTProject(ProjectMovement movement, UserProfile profile)
 	{
 		if (null == movement)
 		{
 			return null;
 		}
-		TProjects result = new TProjects();
+		TProject result = new TProject();
 
 		result.setTProjectType(getTProjectType(movement.getProjectType()));
-		
+
+		TLogin login = new TLogin();
+		login.setLoginId(profile.getLoginID());
+		result.setTLogin(login);
 		return result;
 	}
 

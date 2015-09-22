@@ -27,7 +27,7 @@ public class TAddress implements IBaseEntity
 	private String			state;
 	private String			country;
 	private String			zipCode;
-	private Set<TProjects>	TProjectses	= new HashSet<TProjects>(0);
+	private Set<TProject>	TProjectses	= new HashSet<TProject>(0);
 
 	public TAddress()
 	{
@@ -46,7 +46,7 @@ public class TAddress implements IBaseEntity
 			String state,
 			String country,
 			String zipCode,
-			Set<TProjects> TProjectses)
+			Set<TProject> TProjectses)
 	{
 		this.addressId = addressId;
 		this.addressLine1 = addressLine1;
@@ -137,12 +137,12 @@ public class TAddress implements IBaseEntity
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "TAddress")
-	public Set<TProjects> getTProjectses()
+	public Set<TProject> getTProjectses()
 	{
 		return this.TProjectses;
 	}
 
-	public void setTProjectses(Set<TProjects> TProjectses)
+	public void setTProjectses(Set<TProject> TProjectses)
 	{
 		this.TProjectses = TProjectses;
 	}

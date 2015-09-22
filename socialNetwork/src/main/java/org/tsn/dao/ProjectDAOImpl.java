@@ -5,8 +5,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.tsn.dao.interfaces.IProjectDAO;
-import org.tsn.entity.TProjects;
+import org.tsn.entity.TLogin;
+import org.tsn.entity.TProject;
 import org.tsn.tos.ProjectMovement;
+import org.tsn.tos.UserProfile;
 import org.tsn.utility.DatabaseConversionUtility;
 
 public class ProjectDAOImpl implements IProjectDAO
@@ -19,15 +21,26 @@ public class ProjectDAOImpl implements IProjectDAO
 
 	@Transactional
 	@Override
-	public void addMovement(ProjectMovement movement)
+	public void addMovement(ProjectMovement movement, UserProfile profile)
 	{
 		// TODO Auto-generated method stub
 		System.out.println(movement);
 		try
 		{
-			TProjects projects = DatabaseConversionUtility.shared.geTProject(movement);
-			logger.info("persisting project :" + projects);
-			this.sessionFactory.getCurrentSession().save(projects);
+			TProject project = DatabaseConversionUtility.shared.geTProject(
+					movement, profile);
+
+			if (null != project && null != project.getTLogin())
+			{
+				TLogin login = findById(project.getTLogin().getLoginId());
+				if (null != login)
+				{
+					project.setTLogin(login);
+				}
+			}
+			// findById(projects.getTLogin() )
+			logger.info("persisting project :" + project);
+			this.sessionFactory.getCurrentSession().save(project);
 
 			logger.info("persist successful");
 		}
@@ -53,4 +66,21 @@ public class ProjectDAOImpl implements IProjectDAO
 
 	}
 
+	public TLogin findById(Integer id)
+	{
+		logger.debug("getting TLogin instance with id: " + id);
+		try
+		{
+			TLogin instance = (TLogin) this.sessionFactory.getCurrentSession()
+					.get(TLogin.class, id);
+			// this.sessionFactory.getCurrentSession().g find(TLogin.class, id);
+			logger.debug("get successful");
+			return instance;
+		}
+		catch(RuntimeException re)
+		{
+			logger.error("get failed", re);
+			throw re;
+		}
+	}
 }

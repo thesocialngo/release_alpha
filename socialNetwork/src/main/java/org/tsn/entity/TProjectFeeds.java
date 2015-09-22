@@ -23,7 +23,7 @@ public class TProjectFeeds implements IBaseEntity
 {
 
 	private int			feedId;
-	private TProjects	TProjects;
+	private TProject	TProjects;
 	private String		descr;
 	private byte[]		isPrivate;
 	private Date		commentDate;
@@ -39,7 +39,7 @@ public class TProjectFeeds implements IBaseEntity
 
 	public TProjectFeeds(
 			int feedId,
-			TProjects TProjects,
+			TProject TProjects,
 			String descr,
 			byte[] isPrivate,
 			Date commentDate)
@@ -65,12 +65,12 @@ public class TProjectFeeds implements IBaseEntity
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PROJECT_ID")
-	public TProjects getTProjects()
+	public TProject getTProjects()
 	{
 		return this.TProjects;
 	}
 
-	public void setTProjects(TProjects TProjects)
+	public void setTProjects(TProject TProjects)
 	{
 		this.TProjects = TProjects;
 	}

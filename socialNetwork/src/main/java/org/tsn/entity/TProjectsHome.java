@@ -10,7 +10,7 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * Home object for domain model class TProjects.
- * @see org.tsn.entity.TProjects
+ * @see org.tsn.entity.TProject
  * @author Hibernate Tools
  */
 @Stateless
@@ -22,7 +22,7 @@ public class TProjectsHome
 	@PersistenceContext
 	private EntityManager		entityManager;
 
-	public void persist(TProjects transientInstance)
+	public void persist(TProject transientInstance)
 	{
 		log.debug("persisting TProjects instance");
 		try
@@ -37,7 +37,7 @@ public class TProjectsHome
 		}
 	}
 
-	public void remove(TProjects persistentInstance)
+	public void remove(TProject persistentInstance)
 	{
 		log.debug("removing TProjects instance");
 		try
@@ -52,12 +52,12 @@ public class TProjectsHome
 		}
 	}
 
-	public TProjects merge(TProjects detachedInstance)
+	public TProject merge(TProject detachedInstance)
 	{
 		log.debug("merging TProjects instance");
 		try
 		{
-			TProjects result = entityManager.merge(detachedInstance);
+			TProject result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		}
@@ -68,12 +68,12 @@ public class TProjectsHome
 		}
 	}
 
-	public TProjects findById(int id)
+	public TProject findById(int id)
 	{
 		log.debug("getting TProjects instance with id: " + id);
 		try
 		{
-			TProjects instance = entityManager.find(TProjects.class, id);
+			TProject instance = entityManager.find(TProject.class, id);
 			log.debug("get successful");
 			return instance;
 		}

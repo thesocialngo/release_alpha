@@ -1,11 +1,12 @@
 package org.tsn.service.interfaces;
 
 import org.tsn.tos.ProjectMovement;
+import org.tsn.tos.UserProfile;
 
 public interface IProjectMovement
 {
 
-	public void addMovement(ProjectMovement movement);
+	public void addMovement(ProjectMovement movement, UserProfile profile);
 
 	ProjectMovement getMovement(ProjectMovement movement);
 

@@ -40,39 +40,39 @@ public class UserController extends BaseController
 
 		/*map.addAttribute("userprofile",
 				profileDataManager.getUserProfile(profile));*/
-		
-		//profile.setValidProfile(true);
+
+		// profile.setValidProfile(true);
 
 		UserProfile userProfile = profileDataManager.getUserProfile(profile);
-		
-		model.addAttribute(SessionConstants.USER_PROFILE,userProfile);
 
-		if(userProfile.isValidProfile())
+		model.addAttribute(SessionConstants.USER_PROFILE, userProfile);
+
+		if (userProfile.isValidProfile())
 		{
-			//return "profile/Update-Profile";
-			//http://localhost:8080/socialNetwork/
-//			return "general/index";
+			// return "profile/Update-Profile";
+			// http://localhost:8080/socialNetwork/
+			// return "general/index";
 			return "redirect:/";
 		}
 		else
 		{
-			model.addAttribute("loginError",true);
-			
+			model.addAttribute("loginError", true);
+
 			return "profile/Profile-SignUp";
 		}
 	}
-	
+
 	@RequestMapping(value = "/SignUp", method = RequestMethod.GET)
-	public String loadUserProfile(ModelMap map,HttpServletRequest request)
+	public String loadUserProfile(ModelMap map, HttpServletRequest request)
 	{
-		boolean login = JavaUtility.shared.toBoolean(request.getParameter("login"))  ;
+		boolean login = JavaUtility.shared.toBoolean(request.getParameter("login"));
 		UserProfile profile = new UserProfile();
-		
+
 		map.addAttribute("userprofile",
 				profileDataManager.getUserProfile(profile));
 
-		map.addAttribute("login",login);
-				 
+		map.addAttribute("login", login);
+
 		return "profile/Profile-SignUp";// "profile/bkpSignUp";
 	}
 
@@ -82,7 +82,7 @@ public class UserController extends BaseController
 	 * ""); UserProfile profile = new UserProfile();
 	 * map.addAttribute("userprofile",
 	 * profileDataManager.getUserProfile(profile));
-	 * 
+	 *
 	 * //return "profile/updateprofile"; return
 	 * "common/footer";//"profile/bkpSignUp"; }
 	 */
@@ -108,8 +108,8 @@ public class UserController extends BaseController
 	@RequestMapping(value = "/updateProfile", method = RequestMethod.GET)
 	public String getUserProfile(Model model, HttpServletRequest request)
 	{
-		HttpSession session = request.getSession(false);
-		UserProfile profile = (UserProfile) session.getAttribute(SessionConstants.USER_PROFILE);
+		UserProfile profile = getUserProfile(request);
+		// (UserProfile) session.getAttribute(SessionConstants.USER_PROFILE);
 
 		if (null == profile)
 		{
@@ -127,12 +127,13 @@ public class UserController extends BaseController
 	public String updateUserProfile(
 			@ModelAttribute UserProfile profile,
 			Model model,
-			HttpSession session)
+			HttpServletRequest request)
 	{
 
-		UserProfile sessionProfileData = (UserProfile) session.getAttribute(SessionConstants.USER_PROFILE);
+		UserProfile sessionProfileData = getUserProfile(request);
+		// (UserProfile) session.getAttribute(SessionConstants.USER_PROFILE);
 		logger.info("  updateProfile - Session data : profile ."
-			+ session.getAttribute(SessionConstants.USER_PROFILE));
+				+ sessionProfileData);
 		logger.info("  updateProfile - user data : profile ." + profile);
 		boolean updated = UserProfileConversionUtility.shared.updateUserProfile(
 				profile, sessionProfileData);
@@ -143,8 +144,8 @@ public class UserController extends BaseController
 					sessionProfileData);
 
 			profileDataManager.updateUserProfile(sessionProfileData);
-			session.setAttribute(SessionConstants.USER_PROFILE,
-					sessionProfileData);
+			updateProfile(request, sessionProfileData);
+
 			return "profile/Update-Profile";
 		}
 		return "general/errorPage";
@@ -155,7 +156,7 @@ public class UserController extends BaseController
 	 * @RequestMapping(value = "/", method = RequestMethod.GET) public String
 	 * listsecurityQuestions(ModelMap map) { map.addAttribute("question", "");
 	 * map.addAttribute("masterRecords", masterDataManager.getRecords());
-	 * 
+	 *
 	 * return "admin/index"; }
 	 */
 
@@ -174,9 +175,11 @@ public class UserController extends BaseController
 
 		session.invalidate();
 		if (model.containsAttribute(SessionConstants.USER_PROFILE))
+		{
 			model.asMap().remove(SessionConstants.USER_PROFILE);
+		}
 
-		//return "general/index";
+		// return "general/index";
 		return "redirect:/";
 	}
 

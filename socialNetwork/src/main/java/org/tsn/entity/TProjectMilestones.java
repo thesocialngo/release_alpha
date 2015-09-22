@@ -27,7 +27,7 @@ public class TProjectMilestones implements IBaseEntity
 
 	private int						projectMilestoneId;
 	private TLogin					TLogin;
-	private TProjects				TProjects;
+	private TProject				TProjects;
 	private Integer					descr;
 	private Double					fundsRequired;
 	private Double					fundsReceived;
@@ -49,7 +49,7 @@ public class TProjectMilestones implements IBaseEntity
 	public TProjectMilestones(
 			int projectMilestoneId,
 			TLogin TLogin,
-			TProjects TProjects,
+			TProject TProjects,
 			Integer descr,
 			Double fundsRequired,
 			Double fundsReceived,
@@ -96,12 +96,12 @@ public class TProjectMilestones implements IBaseEntity
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PROJECT_ID")
-	public TProjects getTProjects()
+	public TProject getTProjects()
 	{
 		return this.TProjects;
 	}
 
-	public void setTProjects(TProjects TProjects)
+	public void setTProjects(TProject TProjects)
 	{
 		this.TProjects = TProjects;
 	}
