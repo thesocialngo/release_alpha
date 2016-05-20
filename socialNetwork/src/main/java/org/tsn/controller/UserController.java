@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.tsn.logic.IUserProfileManager;
 import org.tsn.resources.SessionConstants;
 import org.tsn.resources.TSN_Constants;
-import org.tsn.service.interfaces.IUserProfileManager;
 import org.tsn.tos.UserProfile;
 import org.tsn.utility.JavaUtility;
 import org.tsn.utility.UserProfileConversionUtility;
@@ -183,4 +183,10 @@ public class UserController extends BaseController
 		return "redirect:/";
 	}
 
+	@RequestMapping(value = "/errorPage", method = RequestMethod.GET)
+	public String invalidUser(HttpServletRequest request)
+	{
+		request.setAttribute("invalidUser", new Boolean(true));
+		return "general/errorPage";
+	}
 }

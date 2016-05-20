@@ -24,7 +24,6 @@
     <script type="text/javascript" src="js/IE9.js"></script>
   <![endif]-->
   
-  <script type="text/javascript" language="Javascript" src="<c:url value="/js/tsn-common.js" />"></script>
     
 </head>
 <body >
@@ -55,7 +54,7 @@
             <div class="cols-3">
             	<div class="block3">
                 	<div class="icon"><img src="images/icon1.png" alt="icon" /></div>
-                    <h6>SUPPORTERS</h6>
+                    <h6>SUPPORTERS2</h6>
                     <p>
                     	The world has never been so interconnect
                         ed - both in terms of business and 

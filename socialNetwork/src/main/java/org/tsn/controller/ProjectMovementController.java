@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.tsn.coverter.ProjectTypeEditor;
-import org.tsn.service.interfaces.IMasterDataManager;
-import org.tsn.service.interfaces.IProjectMovement;
+import org.tsn.logic.IMasterDataManager;
+import org.tsn.logic.IProjectMovement;
 import org.tsn.tos.ProjectMovement;
 import org.tsn.tos.ProjectType;
 import org.tsn.tos.UserProfile;
@@ -56,7 +56,7 @@ public class ProjectMovementController extends BaseController
 			@ModelAttribute("movement") ProjectMovement movement,
 			BindingResult result,
 			HttpServletRequest request)
-			/*(Model model,@Valid ProjectType projectType)*/
+	/*(Model model,@Valid ProjectType projectType)*/
 	{
 		// status.setComplete();
 		/*Set<ConstraintViolation<ProjectType>> violations = validator.validate(employeeVO);

@@ -2,7 +2,10 @@ package org.tsn.dao;
 
 import java.util.List;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,13 +34,6 @@ public class MasterDataDAOImpl implements IMasterDataDAO
 	@Transactional
 	public MasterRecords getAllRecords()
 	{
-
-		// logs an error message with parameter
-		// logger.error("This is error : " + parameter);
-
-		// logs an exception thrown from somewhere
-		// logger.error("This is error", exception);
-
 		List<TSecurityQuestions> securityQuestions = this.sessionFactory.getCurrentSession()
 				.createQuery("from TSecurityQuestions")
 				.list();
@@ -62,40 +58,60 @@ public class MasterDataDAOImpl implements IMasterDataDAO
 				categories);
 	}
 
+	@Override
 	@Transactional
 	public String addRecord(String tableName, String dataDescription)
 	{
+
 		logger.info("TableName :" + tableName + ", data description  :"
 			+ dataDescription);
 
+		if (!validate(tableName, dataDescription))
+		{
+			return "-1";
+		}
+
+		Integer result = -1;
+		Session session = sessionFactory.getCurrentSession();
 		if (TSN_Constants.MASTER_TABLES[0].equals(tableName))
 		{
 			TSecurityQuestions securityQuestions = MasterDataConversionUtility.shared.getSecurityQuestion(dataDescription);
-			this.sessionFactory.getCurrentSession().save(securityQuestions);
+			result = (Integer) session.save(securityQuestions);
 		}
 
 		if (TSN_Constants.MASTER_TABLES[1].equals(tableName))
 		{
 			TCategories categories = MasterDataConversionUtility.shared.getCategories(dataDescription);
-			this.sessionFactory.getCurrentSession().save(categories);
+			result = (Integer) session.save(categories);
 		}
 		if (TSN_Constants.MASTER_TABLES[2].equals(tableName))
 		{
 			TProjectType projectType = MasterDataConversionUtility.shared.getProjectTypes(dataDescription);
-			this.sessionFactory.getCurrentSession().save(projectType);
+			result = (Integer) session.save(projectType);
 		}
 		if (TSN_Constants.MASTER_TABLES[3].equals(tableName))
 		{
 			TEducation education = MasterDataConversionUtility.shared.getEducation(dataDescription);
-			this.sessionFactory.getCurrentSession().save(education);
+			result = (Integer) session.save(education);
 		}
 		if (TSN_Constants.MASTER_TABLES[4].equals(tableName))
 		{
 			TOccupation occupation = MasterDataConversionUtility.shared.getOccupation(dataDescription);
-			this.sessionFactory.getCurrentSession().save(occupation);
+			result = (Integer) session.save(occupation);
 		}
 
-		return "";// questions.getQuestionText();
+		return Integer.toString(result);// questions.getQuestionText();
+	}
+
+	private boolean validate(String tableName, String description)
+	{
+		if (ArrayUtils.contains(TSN_Constants.MASTER_TABLES, tableName)
+				&& StringUtils.isNotBlank(description))
+		{
+			return true;
+		}
+
+		return false;
 	}
 
 	@Override
@@ -104,39 +120,36 @@ public class MasterDataDAOImpl implements IMasterDataDAO
 	{
 		logger.info("deleting............" + id);
 
+		Session session = sessionFactory.getCurrentSession();
 		IBaseEntity entity = null;
 
 		if (TSN_Constants.MASTER_TABLES[0].equals(tableName))
 		{
-			entity = (TSecurityQuestions) sessionFactory.getCurrentSession()
-					.load(TSecurityQuestions.class, id);
+			entity = (TSecurityQuestions) session.load(
+					TSecurityQuestions.class, id);
 		}
 
 		if (TSN_Constants.MASTER_TABLES[1].equals(tableName))
 		{
-			entity = (TCategories) sessionFactory.getCurrentSession().load(
-					TCategories.class, id);
+			entity = (TCategories) session.load(TCategories.class, id);
 		}
 		if (TSN_Constants.MASTER_TABLES[2].equals(tableName))
 		{
-			entity = (TProjectType) sessionFactory.getCurrentSession().load(
-					TProjectType.class, id);
+			entity = (TProjectType) session.load(TProjectType.class, id);
 		}
 		if (TSN_Constants.MASTER_TABLES[3].equals(tableName))
 		{
-			entity = (TEducation) sessionFactory.getCurrentSession().load(
-					TEducation.class, id);
+			entity = (TEducation) session.load(TEducation.class, id);
 		}
 		if (TSN_Constants.MASTER_TABLES[4].equals(tableName))
 		{
-			entity = (TOccupation) sessionFactory.getCurrentSession().load(
-					TOccupation.class, id);
+			entity = (TOccupation) session.load(TOccupation.class, id);
 		}
 
 		if (null != entity)
 		{
 			logger.info("deleting.........xxxxxx....." + entity);
-			this.sessionFactory.getCurrentSession().delete(entity);
+			session.delete(entity);
 		}
 	}
 

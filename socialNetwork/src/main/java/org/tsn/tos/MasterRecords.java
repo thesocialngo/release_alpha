@@ -1,5 +1,8 @@
 package org.tsn.tos;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class MasterRecords
 {
 

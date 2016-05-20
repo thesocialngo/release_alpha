@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:context="http://www.springframework.org/schema/context" 
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd">
 
 
 
@@ -15,104 +23,119 @@
 		infrastructure -->
 
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<annotation-driven />
+	<mvc:annotation-driven />
 
 	<context:annotation-config />
 	<context:component-scan base-package="org.tsn.controller" />
+	<context:component-scan base-package="org.tsn.service.impl" />
 
-	<resources mapping="/css/**" location="/resources/css/" />
-	<resources mapping="/images/**" location="/resources/images/" />
-	<resources mapping="/documents/**" location="/resources/documents/" />
-	<resources mapping="/js/**" location="/resources/js/" />
+	<mvc:resources mapping="/css/**" location="/resources/css/" />
+	<mvc:resources mapping="/images/**" location="/resources/images/" />
+	<mvc:resources mapping="/documents/**" location="/resources/documents/" />
+	<mvc:resources mapping="/js/**" location="/resources/js/" />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 	
-	<resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/static/**" location="/static/" />
 
+	<http auto-config="true">
+		<intercept-url pattern="/service/admin/masterData*" access="ROLE_ADMIN" />
+		<logout logout-success-url="/admin" />
+	</http>
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
-	<beans:bean id="jspViewResolver"
+	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
-	</beans:bean>
-	<beans:bean id="messageSource"
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="2" />
+	</bean>
+	
+	<bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="1" />
+	</bean>
+     
+    
+    
+	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<beans:property name="basename" value="classpath:tsnmessages" />
-		<beans:property name="defaultEncoding" value="UTF-8" />
-	</beans:bean>
+		<property name="basename" value="classpath:tsnmessages" />
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
 
 
-	<beans:bean id="propertyConfigurer"
+	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<beans:property name="location" value="/WEB-INF/jdbc.properties" />
-	</beans:bean>
+		<property name="location" value="/WEB-INF/jdbc.properties" />
+	</bean>
 
 
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<beans:property name="driverClassName" value="${jdbc.driverClassName}" />
-		<beans:property name="url" value="${jdbc.databaseurl}" />
-		<beans:property name="username" value="${jdbc.username}" />
-		<beans:property name="password" value="${jdbc.password}" />
-	</beans:bean>
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.databaseurl}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
 
 	 
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
-	<beans:bean id="sessionFactory"
+	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="annotatedClasses">
-			<beans:list>
-				<beans:value>org.tsn.entity.TAddress</beans:value>
-				<beans:value>org.tsn.entity.TCategories</beans:value>
-				<beans:value>org.tsn.entity.TProjectType</beans:value>
-				<beans:value>org.tsn.entity.TEducation</beans:value>
-				<beans:value>org.tsn.entity.TLogin</beans:value>
-				<beans:value>org.tsn.entity.TOccupation</beans:value>
-				<beans:value>org.tsn.entity.TProfile</beans:value>
-				<beans:value>org.tsn.entity.TProjectFeeds</beans:value>
-				<beans:value>org.tsn.entity.TProjectGallery</beans:value>
-				<beans:value>org.tsn.entity.TProjectMilestones</beans:value>
-				<beans:value>org.tsn.entity.TProject</beans:value>
-				<beans:value>org.tsn.entity.TSecurityAnswers</beans:value>
-				<beans:value>org.tsn.entity.TSecurityQuestions</beans:value>
-				<beans:value>org.tsn.entity.TTeam</beans:value>
-				<beans:value>org.tsn.entity.TUserCiircle</beans:value>
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>org.tsn.entity.TAddress</value>
+				<value>org.tsn.entity.TCategories</value>
+				<value>org.tsn.entity.TProjectType</value>
+				<value>org.tsn.entity.TEducation</value>
+				<value>org.tsn.entity.TLogin</value>
+				<value>org.tsn.entity.TOccupation</value>
+				<value>org.tsn.entity.TProfile</value>
+				<value>org.tsn.entity.TProjectFeeds</value>
+				<value>org.tsn.entity.TProjectGallery</value>
+				<value>org.tsn.entity.TProjectMilestones</value>
+				<value>org.tsn.entity.TProject</value>
+				<value>org.tsn.entity.TSecurityAnswers</value>
+				<value>org.tsn.entity.TSecurityQuestions</value>
+				<value>org.tsn.entity.TTeam</value>
+				<value>org.tsn.entity.TUserCiircle</value>
 
 
-			</beans:list>
-		</beans:property>
-		<beans:property name="hibernateProperties">
-			<beans:props>
-				<beans:prop key="hibernate.dialect">${jdbc.dialect}
-				</beans:prop>
-				<beans:prop key="hibernate.show_sql">true</beans:prop>
-			</beans:props>
-		</beans:property>
-	</beans:bean>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.dialect}
+				</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+	</bean>
 
 
 	
-	<beans:bean id="masterDataManager" class="org.tsn.service.MasterDataManagerImpl"> </beans:bean>
-	<beans:bean id="masterDataDAO" class="org.tsn.dao.MasterDataDAOImpl"> </beans:bean>
+	<bean id="masterDataManager" class="org.tsn.logic.impl.MasterDataManagerImpl"> </bean>
+	<bean id="masterDataDAO" class="org.tsn.dao.MasterDataDAOImpl"> </bean>
 	
-	<beans:bean id="profileDAO" class="org.tsn.dao.UserProfileDAOImpl"></beans:bean>
-	<beans:bean id="profileDataManager" class="org.tsn.service.UserProfileManagerImpl"></beans:bean>
+	<bean id="profileDAO" class="org.tsn.dao.UserProfileDAOImpl"></bean>
+	<bean id="profileDataManager" class="org.tsn.logic.impl.UserProfileManagerImpl"></bean>
 	 
-	<beans:bean id="fProjectDAO" class="org.tsn.dao.ProjectDAOImpl"></beans:bean>
-	<beans:bean id="fMovement" class="org.tsn.service.ProjectMovementManager"></beans:bean>
+	<bean id="fProjectDAO" class="org.tsn.dao.ProjectDAOImpl"></bean>
+	<bean id="fMovement" class="org.tsn.logic.impl.ProjectMovementManager"></bean>
 	
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-	<beans:bean id="transactionManager"
+	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<beans:property name="sessionFactory"
+		<property name="sessionFactory"
 			ref="sessionFactory" />
-	</beans:bean>
+	</bean>
 
+<bean id="loginFilterBean" class="org.tsn.controller.filter.LoginFilter"/>
 
-</beans:beans>
+</beans>

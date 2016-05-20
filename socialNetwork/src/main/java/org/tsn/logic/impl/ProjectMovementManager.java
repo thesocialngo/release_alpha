@@ -1,8 +1,8 @@
-package org.tsn.service;
+package org.tsn.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.tsn.dao.interfaces.IProjectDAO;
-import org.tsn.service.interfaces.IProjectMovement;
+import org.tsn.logic.IProjectMovement;
 import org.tsn.tos.ProjectMovement;
 import org.tsn.tos.UserProfile;
 

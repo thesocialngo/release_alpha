@@ -12,7 +12,6 @@ public class ProjectType extends BaseTransferObject
 
 	public ProjectType()
 	{
-		// TODO Auto-generated constructor stub
 	}
 
 	public ProjectType(int projectTypeID, String desc)

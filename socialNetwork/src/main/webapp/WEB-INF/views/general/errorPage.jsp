@@ -31,10 +31,17 @@
  <jsp:include page="../common/header.jsp"></jsp:include>
  
  <section class="content">
- 
-We are facing some technical problem,please check back later or contact administrator. Thank you.
 
- <div class="clear"></div>
+<c:choose>
+	<c:when test="${invalidUser}">
+		You are not authorized to see this page.Please contact admin.
+	</c:when>
+	<c:otherwise> 
+		We are facing some technical problem,please check back later or contact administrator. Thank you.
+	</c:otherwise>
+</c:choose>
+
+		<div class="clear"></div>
 </section>
 <!------------ CONTENT END-------------->
 <jsp:include page="../common/footer.jsp"></jsp:include>

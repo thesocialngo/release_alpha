@@ -4,7 +4,7 @@ import java.beans.PropertyEditorSupport;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.tsn.service.interfaces.IMasterDataManager;
+import org.tsn.logic.IMasterDataManager;
 import org.tsn.tos.ProjectType;
 
 public class ProjectTypeEditor extends PropertyEditorSupport

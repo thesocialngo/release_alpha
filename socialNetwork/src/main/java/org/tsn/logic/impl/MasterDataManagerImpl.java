@@ -1,9 +1,9 @@
-package org.tsn.service;
+package org.tsn.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.tsn.dao.interfaces.IMasterDataDAO;
-import org.tsn.service.interfaces.IMasterDataManager;
+import org.tsn.logic.IMasterDataManager;
 import org.tsn.tos.MasterRecords;
 import org.tsn.tos.ProjectType;
 

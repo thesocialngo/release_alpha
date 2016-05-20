@@ -1,4 +1,4 @@
-package org.tsn.service.interfaces;
+package org.tsn.logic;
 
 import org.tsn.tos.UserProfile;
 
