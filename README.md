@@ -1,5 +1,5 @@
 # release_alpha
-Following common commands we may need to run in git shell.
+Following common commands we may need to run in git shell.If svn plugin installed in eclipse, git shell is not required.
 
 C:\Git_Repository>git clone https://github.com/thesocialngo/socialngo1.0.git
 C:\Git_Repository>git pull ----may give conflict 
